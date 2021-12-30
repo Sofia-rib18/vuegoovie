@@ -4,7 +4,7 @@
     <h2>
       <router-link :to="{ name: 'register' }">Register</router-link>
     </h2>
-    <b-form @submit.prevent="register">
+    <b-form @submit.prevent="login">
       <!-- Username -->
       <b-form-group id="input-group-1" label="Username" label-for="input-1">
         <b-form-input
