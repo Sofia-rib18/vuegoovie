@@ -114,4 +114,18 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+h1{
+  font-family: 'Anton', sans-serif;
+}
+
+h2{
+  font-family: 'Anton', sans-serif;
+}
+
+#input-group-1, #input-group-2, #input-group-3, #input-group-4{
+  font-family: 'Quicksand', sans-serif;
+}
 </style>
