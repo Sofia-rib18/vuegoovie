@@ -16,6 +16,8 @@ import quizz from '../views/quizz.vue'
 import actor from '../views/actor.vue'
 import director from '../views/director.vue'
 
+import store from '../store/index.js'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -37,7 +39,10 @@ const routes = [
   {
     path: '/classifications',
     name: 'classifications',
-    component: classifications
+    component: classifications,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/classifications/:mundial',
@@ -108,6 +113,14 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth && !store.getters.getLoggedUser) {
+    next({ name: 'login' })
+  } else {
+    next()
+  }
 })
 
 export default router

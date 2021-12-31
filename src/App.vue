@@ -18,6 +18,9 @@
             <router-link to="/filmes" id="link">Movies</router-link>
             <router-link to="/series" id="link">Series</router-link>
             <router-link to="/quizzes" id="link">Quizzes</router-link>
+            <router-link to="/classifications" id="link"
+              >Classifications</router-link
+            >
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->
