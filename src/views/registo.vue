@@ -9,7 +9,9 @@
           <b-row>
             <b-col class="column">
               <h2>
-                <router-link :to="{ name: 'login' }" id="linkLogin">Login</router-link>
+                <router-link :to="{ name: 'login' }" id="linkLogin"
+                  >Login</router-link
+                >
               </h2>
             </b-col>
             <b-col class="column">
@@ -18,7 +20,11 @@
           </b-row>
           <b-form @submit.prevent="register">
             <!-- Username -->
-            <b-form-group id="input-group-1" label="Username" label-for="input-1">
+            <b-form-group
+              id="input-group-1"
+              label="Username"
+              label-for="input-1"
+            >
               <b-form-input
                 id="input-1"
                 v-model="form.username"
@@ -27,7 +33,11 @@
               ></b-form-input>
             </b-form-group>
             <!-- Nacionalidade -->
-            <b-form-group id="input-group-2" label="Nationality" label-for="input-2">
+            <b-form-group
+              id="input-group-2"
+              label="Nationality"
+              label-for="input-2"
+            >
               <b-form-select
                 id="input-2"
                 v-model="form.nationality"
@@ -36,7 +46,11 @@
               ></b-form-select>
             </b-form-group>
             <!-- Password -->
-            <b-form-group id="input-group-3" label="Password" label-for="input-3">
+            <b-form-group
+              id="input-group-3"
+              label="Password"
+              label-for="input-3"
+            >
               <b-form-input
                 id="input-3"
                 v-model="form.password"
@@ -71,7 +85,9 @@
                 Password is the same
               </b-form-valid-feedback>
             </b-form-group>
-            <b-button type="submit" variant="primary" id="button">Register</b-button>
+            <b-button type="submit" variant="primary" id="button"
+              >Register</b-button
+            >
           </b-form>
         </b-col>
       </b-row>
@@ -378,42 +394,49 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1{
-  font-family: 'Anton', sans-serif;
+h1 {
+  font-family: "Anton", sans-serif;
   color: #7c766d;
 }
 
-h2{
-  font-family: 'Anton', sans-serif;
+h2 {
+  font-family: "Anton", sans-serif;
 }
 
-#linkLogin{
+#linkLogin {
   color: #baa5a3;
 }
 
-#input-group-1, #input-group-2, #input-group-3, #input-group-4, #button{
-  font-family: 'Quicksand', sans-serif;
+#input-group-1,
+#input-group-2,
+#input-group-3,
+#input-group-4,
+#button {
+  font-family: "Quicksand", sans-serif;
   color: #070707;
 }
 
-#input-1, #input-2, #input-3, #input-4{
+#input-1,
+#input-2,
+#input-3,
+#input-4 {
   border-color: #de2221;
 }
 
-.column{
+.column {
   padding: 70px;
 }
 
-#button{
+#button {
   background-color: #de2221;
   border-color: #de2221;
   color: #fef8f8;
