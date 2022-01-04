@@ -43,6 +43,53 @@
         <b-button>View more</b-button>
       </b-carousel-slide>
     </b-carousel>
+
+    <!-- Divisão para os challenges -->
+    <b-container fluid="sm">
+      <b-row class="text-center">
+        <h1>Challenges</h1>
+      </b-row>
+      <b-row class="text-center"
+        ><p>Extra games that allow you to earn more points</p></b-row
+      >
+      <b-row>
+        <b-card-group deck>
+          <b-card
+            title="Card Title"
+            img-src="https://picsum.photos/600/300/?image=25"
+            img-alt="Image"
+            img-top
+            tag="article"
+            style="max-width: 20rem"
+            class="mb-6"
+          >
+            <b-button href="#" variant="primary">Play</b-button>
+          </b-card>
+          <b-card
+            title="Card Title"
+            img-src="https://picsum.photos/600/300/?image=25"
+            img-alt="Image"
+            img-top
+            tag="article"
+            style="max-width: 20rem"
+            class="mb-6"
+          >
+            <b-button href="#" variant="primary">Play</b-button>
+          </b-card>
+          <b-card
+            title="Card Title"
+            img-src="https://picsum.photos/600/300/?image=25"
+            img-alt="Image"
+            img-top
+            tag="article"
+            style="max-width: 20rem"
+            class="mb-6"
+          >
+            <b-button href="#" variant="primary">Play</b-button>
+          </b-card>
+        </b-card-group>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
