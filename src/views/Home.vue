@@ -56,7 +56,7 @@
         <b-card-group deck>
           <b-card
             title="Card Title"
-            img-src="https://picsum.photos/600/300/?image=25"
+            img-src="https://picsum.photos/600/300/?image=96"
             img-alt="Image"
             img-top
             tag="article"
@@ -78,7 +78,7 @@
           </b-card>
           <b-card
             title="Card Title"
-            img-src="https://picsum.photos/600/300/?image=25"
+            img-src="https://picsum.photos/600/300/?image=451"
             img-alt="Image"
             img-top
             tag="article"
@@ -96,6 +96,22 @@
 <script>
 export default {
   name: "Home",
+  data() {
+    return {
+      slide: 0,
+      sliding: null,
+    };
+  },
+  methods: {
+    onSlideStart(slide) {
+      this.sliding = true;
+      slide;
+    },
+    onSlideEnd(slide) {
+      this.sliding = false;
+      slide;
+    },
+  },
 };
 </script>
 

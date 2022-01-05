@@ -59,6 +59,12 @@
 #link {
   padding: 30px;
   color: #fef8f8;
+  text-decoration: none;
+}
+
+#link:hover {
+  text-decoration: #de2221;
+  text-decoration-line: underline;
 }
 
 #navbarBackground {
