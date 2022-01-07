@@ -9,7 +9,6 @@
       background="#000000"
       img-width="1024"
       img-height="350"
-      style="text-shadow: 1px 1px 2px #333"
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
     >

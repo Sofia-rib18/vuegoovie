@@ -29,7 +29,7 @@
               <b-icon icon="search" width="30px" height="30px"></b-icon>
             </b-nav-item>
             <b-nav-item href="#">
-              <router-link to="/login" id="link"
+              <router-link to="/profile" id="link"
                 ><b-icon
                   icon="person-circle"
                   width="35px"

@@ -87,7 +87,10 @@ const routes = [
   {
     path: '/:profileId',
     name: 'profile',
-    component: profile
+    component: profile,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/:actorId',
