@@ -54,8 +54,8 @@
       <b-row>
         <b-card-group deck>
           <b-card
-            title="Card Title"
-            img-src="https://picsum.photos/600/300/?image=96"
+            title="Quizz Action"
+            img-src="https://nerdiano.com.br/wp-content/uploads/2019/07/john-wick-tv-series-chapter-3-feature-img-geekexchange-061517.jpg"
             img-alt="Image"
             img-top
             tag="article"
@@ -66,7 +66,7 @@
           </b-card>
           <b-card
             title="Card Title"
-            img-src="https://picsum.photos/600/300/?image=25"
+            img-src="https://picsum.photos/600/300/?image=96"
             img-alt="Image"
             img-top
             tag="article"

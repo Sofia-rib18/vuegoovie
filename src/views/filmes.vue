@@ -24,18 +24,12 @@
             <b-card-img :src="movie.poster"></b-card-img>
             <b-card-title>{{ movie.title }}</b-card-title>
             <b-button
-              ><router-link
-                :to="{ name: 'filmes', params: { filmesId: movie.id } }"
-                >View more</router-link
-              ></b-button
-            >
-            <!-- <b-button
               @click="
-                $router.push({ name: 'filmes', params: { filmeId: movie.id } })
+                $router.push({ name: 'filme', params: { filmeId: movie.id } })
               "
               variant="primary"
               >View more</b-button
-            > -->
+            >
           </b-card>
         </b-card-group>
       </b-row>
