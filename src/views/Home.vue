@@ -1,5 +1,5 @@
-<template>
-  <div>
+<template >
+  <div id="app1">
     <b-carousel
       id="carousel-1"
       v-model="slide"
@@ -71,7 +71,7 @@
               style="max-width: 20rem"
               class="mb-6"
             >
-              <b-button href="#" variant="primary">Play</b-button>
+              <b-button href="#" id="button1">Play</b-button>
             </b-card>
             <b-card
               title="Card Title"
@@ -82,7 +82,7 @@
               style="max-width: 20rem"
               class="mb-6"
             >
-              <b-button href="#" variant="primary">Play</b-button>
+              <b-button href="#" id="button1">Play</b-button>
             </b-card>
             <b-card
               title="Card Title"
@@ -93,16 +93,81 @@
               style="max-width: 20rem"
               class="mb-6"
             >
-              <b-button href="#" variant="primary">Play</b-button>
+              <b-button href="#" id="button1">Play</b-button>
             </b-card>
           </b-card-group>
         </b-row>
       </b-container>
     </div>
+    <!-- Best Qualified -->
+    <b-container fluid="sm">
+      <b-row class="text-center">
+        <h1 id="h1">Best qualified</h1>
+      </b-row>
+      <b-row class="text-center"
+        ><p id="p2">The best Movies and Series right now</p></b-row
+      >
+      <b-row>
+        <b-card-group
+          deck
+          v-for="(movie, index) in getMovies"
+          :key="index"
+          id="grup2"
+        >
+          <b-card tag="article" style="max-width: 20rem" class="mb-12"
+            ><b-card-img :src="movie.poster"></b-card-img>
+            <b-card-title>{{ movie.title }}</b-card-title>
+            <b-button href="#" id="button1">View more</b-button>
+          </b-card>
+        </b-card-group>
+      </b-row>
+    </b-container>
+    <!-- Recents -->
+    <b-container fluid="sm">
+      <b-row class="text-center">
+        <h1 id="h12">Recents</h1>
+      </b-row>
+      <b-row class="text-center"
+        ><p id="p3">Movies and Series streaming right now</p></b-row
+      >
+      <b-row>
+        <b-card-group
+          deck
+          v-for="(serie, index) in getSeries"
+          :key="index"
+          id="grup3"
+        >
+          <b-card tag="article" style="max-width: 20rem" class="mb-12"
+            ><b-card-img :src="serie.poster"></b-card-img>
+            <b-card-title>{{ serie.title }}</b-card-title>
+            <b-button href="#" id="button1">View more</b-button>
+          </b-card>
+        </b-card-group>
+      </b-row>
+    </b-container>
+    <!-- Quizz -->
+    <b-container id="quizz">
+      <b-row>
+        <b-col>
+          <b-img
+            width="600"
+            left
+            thumbnail
+            src="https://nerdiano.com.br/wp-content/uploads/2019/07/john-wick-tv-series-chapter-3-feature-img-geekexchange-061517.jpg"
+            alt="Image 1"
+          ></b-img>
+        </b-col>
+        <b-col>
+          <h1>Quizz Action</h1>
+          <b-button href="#" id="button1">Play</b-button>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "Home",
   data() {
@@ -121,10 +186,16 @@ export default {
       slide;
     },
   },
+  computed: {
+    ...mapGetters(["getMovies", "getSeries"]),
+  },
 };
 </script>
 
 <style>
+#app1 {
+  background-color: #070707;
+}
 #h1 {
   margin-top: 50px;
   padding-left: 500px;
@@ -139,5 +210,41 @@ export default {
 #grup {
   padding-left: 80px;
   margin-top: 30px;
+}
+#h12 {
+  margin-top: 50px;
+  padding-left: 550px;
+}
+#p2 {
+  padding-left: 460px;
+  margin-top: 5px;
+  color: #fff8f7;
+}
+#p3 {
+  padding-left: 470px;
+  margin-top: 5px;
+  color: #fff8f7;
+}
+#grup2 {
+  padding-left: 60px;
+  margin-top: 30px;
+}
+#grup3 {
+  padding-left: 60px;
+  margin-top: 30px;
+}
+#quizz {
+  margin-top: 150px;
+}
+#quizz h1 {
+  margin-top: 100px;
+}
+#button1 {
+  background-color: #de2221;
+  border-color: #de2221;
+  border-width: 2px;
+  color: #fef8f8;
+  width: 170px;
+  height: 40px;
 }
 </style>
