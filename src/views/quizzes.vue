@@ -1,21 +1,27 @@
 <template>
   <div>
-    <h1>Quizzes</h1>
-    <!-- Filtro -->
-    <b-dropdown
-      id="dropdown-right"
-      right
-      text="Filter"
-      variant="primary"
-      class="m-2"
-    >
-      <b-dropdown-item href="#">Recents</b-dropdown-item>
-      <b-dropdown-item href="#">Best Qualified</b-dropdown-item>
-      <b-dropdown-item href="#">Action</b-dropdown-item>
-      <b-dropdown-item href="#">Drama</b-dropdown-item>
-      <b-dropdown-item href="#">Animation</b-dropdown-item>
-      <b-dropdown-item href="#">More</b-dropdown-item>
-    </b-dropdown>
+    <b-row>
+      <b-col>
+        <h1>Quizzes</h1>
+      </b-col>
+      <b-col>
+        <!-- Filtro -->
+        <b-dropdown
+          id="dropdown-right"
+          right
+          text="Filter"
+          variant="primary"
+          class="m-2"
+        >
+          <b-dropdown-item href="#">Recents</b-dropdown-item>
+          <b-dropdown-item href="#">Best Qualified</b-dropdown-item>
+          <b-dropdown-item href="#">Action</b-dropdown-item>
+          <b-dropdown-item href="#">Drama</b-dropdown-item>
+          <b-dropdown-item href="#">Animation</b-dropdown-item>
+          <b-dropdown-item href="#">More</b-dropdown-item>
+        </b-dropdown>
+      </b-col>
+    </b-row>
 
     <b-container fluid="sm">
       <b-row>
