@@ -3,7 +3,8 @@
     <b-container class="bv-example-row">
       <b-row>
         <b-col>
-          <b-img src="../assets/background.png"></b-img>
+          <!-- <b-img src="../assets/background.png"></b-img> -->
+          <img src="../assets/background.png" alt="" />
         </b-col>
         <b-col>
           <b-row>
