@@ -51,52 +51,54 @@
       </b-carousel-slide>
     </b-carousel>
 
-    <!-- Divisão para os challenges -->
-    <b-container fluid="sm">
-      <b-row class="text-center">
-        <h1>Challenges</h1>
-      </b-row>
-      <b-row class="text-center"
-        ><p>Extra games that allow you to earn more points</p></b-row
-      >
-      <b-row>
-        <b-card-group deck>
-          <b-card
-            title="Quizz Action"
-            img-src="https://nerdiano.com.br/wp-content/uploads/2019/07/john-wick-tv-series-chapter-3-feature-img-geekexchange-061517.jpg"
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem"
-            class="mb-6"
-          >
-            <b-button href="#" variant="primary">Play</b-button>
-          </b-card>
-          <b-card
-            title="Card Title"
-            img-src="https://picsum.photos/600/300/?image=96"
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem"
-            class="mb-6"
-          >
-            <b-button href="#" variant="primary">Play</b-button>
-          </b-card>
-          <b-card
-            title="Card Title"
-            img-src="https://picsum.photos/600/300/?image=451"
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem"
-            class="mb-6"
-          >
-            <b-button href="#" variant="primary">Play</b-button>
-          </b-card>
-        </b-card-group>
-      </b-row>
-    </b-container>
+    <!-- Challenges -->
+    <div id="challenges">
+      <b-container fluid="sm">
+        <b-row class="text-center">
+          <h1 id="h1">Challenges</h1>
+        </b-row>
+        <b-row class="text-center"
+          ><p id="p">Extra games that allow you to earn more points</p></b-row
+        >
+        <b-row>
+          <b-card-group deck id="grup">
+            <b-card
+              title="Quizz Action"
+              img-src="https://nerdiano.com.br/wp-content/uploads/2019/07/john-wick-tv-series-chapter-3-feature-img-geekexchange-061517.jpg"
+              img-alt="Image"
+              img-top
+              tag="article"
+              style="max-width: 20rem"
+              class="mb-6"
+            >
+              <b-button href="#" variant="primary">Play</b-button>
+            </b-card>
+            <b-card
+              title="Card Title"
+              img-src="https://picsum.photos/600/300/?image=96"
+              img-alt="Image"
+              img-top
+              tag="article"
+              style="max-width: 20rem"
+              class="mb-6"
+            >
+              <b-button href="#" variant="primary">Play</b-button>
+            </b-card>
+            <b-card
+              title="Card Title"
+              img-src="https://picsum.photos/600/300/?image=451"
+              img-alt="Image"
+              img-top
+              tag="article"
+              style="max-width: 20rem"
+              class="mb-6"
+            >
+              <b-button href="#" variant="primary">Play</b-button>
+            </b-card>
+          </b-card-group>
+        </b-row>
+      </b-container>
+    </div>
   </div>
 </template>
 
@@ -123,4 +125,19 @@ export default {
 </script>
 
 <style>
+#h1 {
+  margin-top: 50px;
+  padding-left: 500px;
+}
+#p {
+  padding-left: 410px;
+  margin-top: 5px;
+}
+#challenges {
+  background-color: #fff8f7;
+}
+#grup {
+  padding-left: 80px;
+  margin-top: 30px;
+}
 </style>
