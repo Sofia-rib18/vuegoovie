@@ -70,7 +70,7 @@ const routes = [
     component: quizzes
   },
   {
-    path: '/series/:quizzId',
+    path: '/quizzes/:quizzId',
     name: 'quizz',
     component: quizz
   },

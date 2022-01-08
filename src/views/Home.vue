@@ -71,7 +71,11 @@
               style="max-width: 20rem"
               class="mb-6"
             >
-              <b-button href="#" id="button1">Play</b-button>
+              <b-button href="#" id="button1"
+                ><router-link :to="{ name: 'quizz' }">
+                  Play</router-link
+                ></b-button
+              >
             </b-card>
             <b-card
               title="Card Title"
@@ -117,7 +121,14 @@
           <b-card tag="article" style="max-width: 20rem" class="mb-12"
             ><b-card-img :src="movie.poster"></b-card-img>
             <b-card-title>{{ movie.title }}</b-card-title>
-            <b-button href="#" id="button1">View more</b-button>
+            <b-button
+              href="#"
+              id="button1"
+              @click="
+                $router.push({ name: 'filme', params: { filmeId: movie.id } })
+              "
+              >View more</b-button
+            >
           </b-card>
         </b-card-group>
       </b-row>
@@ -140,7 +151,14 @@
           <b-card tag="article" style="max-width: 20rem" class="mb-12"
             ><b-card-img :src="serie.poster"></b-card-img>
             <b-card-title>{{ serie.title }}</b-card-title>
-            <b-button href="#" id="button1">View more</b-button>
+            <b-button
+              href="#"
+              id="button1"
+              @click="
+                $router.push({ name: 'serie', params: { serieId: serie.id } })
+              "
+              >View more</b-button
+            >
           </b-card>
         </b-card-group>
       </b-row>
@@ -159,7 +177,9 @@
         </b-col>
         <b-col>
           <h1>Quizz Action</h1>
-          <b-button href="#" id="button1">Play</b-button>
+          <b-button href="#" id="button1"
+            ><router-link :to="{ name: 'quizz' }"> Play</router-link></b-button
+          >
         </b-col>
       </b-row>
     </b-container>

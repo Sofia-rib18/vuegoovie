@@ -35,7 +35,11 @@
             style="max-width: 20rem"
             class="mb-6"
           >
-            <b-button href="#" variant="primary">Play</b-button>
+            <b-button href="#"
+              ><router-link :to="{ name: 'quizz' }">
+                Play</router-link
+              ></b-button
+            >
           </b-card>
           <b-card
             title="Card Title"
@@ -46,7 +50,7 @@
             style="max-width: 20rem"
             class="mb-6"
           >
-            <b-button href="#" variant="primary">Play</b-button>
+            <b-button href="#"> Play</b-button>
           </b-card>
           <b-card
             title="Card Title"
