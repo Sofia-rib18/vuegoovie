@@ -8,34 +8,23 @@
           <p>0<b-icon icon="controller"></b-icon></p>
 
           <br />
-          <p>
-            Follows the personal and professional lives of six twenty to
-            thirty-something-year-old friends living in Manhattan.
-          </p>
+          <audio controls>
+            <source src="horse.ogg" type="audio/ogg" />
+            <source src="../assets/Laser Gun.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
           <b-card-group>
-            <b-card tag="article" style="max-width: 20rem" class="mb-12"
-              ><b-card-img
-                src="https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_FMjpg_UX1000_.jpg"
-              ></b-card-img>
-              <button type="submit" value="a" id="button1">A</button>
+            <b-card tag="article" style="max-width: 20rem" class="mb-12">
+              <button type="submit" value="a" id="button1">A. Friends</button>
             </b-card>
-            <b-card tag="article" style="max-width: 20rem" class="mb-12"
-              ><b-card-img
-                src="https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_FMjpg_UX1000_.jpg"
-              ></b-card-img>
-              <button type="submit" value="b" id="button1">B</button>
+            <b-card tag="article" style="max-width: 20rem" class="mb-12">
+              <button type="submit" value="b" id="button1">B. Friends</button>
             </b-card>
-            <b-card tag="article" style="max-width: 20rem" class="mb-12"
-              ><b-card-img
-                src="https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_FMjpg_UX1000_.jpg"
-              ></b-card-img>
-              <button type="submit" value="c" id="button1">C</button>
+            <b-card tag="article" style="max-width: 20rem" class="mb-12">
+              <button type="submit" value="c" id="button1">C. Friends</button>
             </b-card>
-            <b-card tag="article" style="max-width: 20rem" class="mb-12"
-              ><b-card-img
-                src="https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_FMjpg_UX1000_.jpg"
-              ></b-card-img>
-              <button type="submit" value="d" id="button1">D</button>
+            <b-card tag="article" style="max-width: 20rem" class="mb-12">
+              <button type="submit" value="d" id="button1">D. Friends</button>
             </b-card>
           </b-card-group>
         </div>
@@ -54,8 +43,7 @@
       ></b-img>
     </b-col>
     <b-col>
-      <h1>Quizz Action</h1>
-      <h3>Dodge This!!!</h3>
+      <h1>Quizz 3</h1>
       <b-button href="#" id="button1" @click="start">Play</b-button>
       <p>{{ status }}</p>
     </b-col>

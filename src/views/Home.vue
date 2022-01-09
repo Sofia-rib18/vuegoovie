@@ -78,7 +78,7 @@
               >
             </b-card>
             <b-card
-              title="Card Title"
+              title="Quizz 2"
               img-src="https://picsum.photos/600/300/?image=96"
               img-alt="Image"
               img-top
@@ -86,10 +86,14 @@
               style="max-width: 20rem"
               class="mb-6"
             >
-              <b-button href="#" id="button1">Play</b-button>
+              <b-button href="#" id="button1"
+                ><router-link :to="{ name: 'quizz2' }">
+                  Play</router-link
+                ></b-button
+              >
             </b-card>
             <b-card
-              title="Card Title"
+              title="Quizz3"
               img-src="https://picsum.photos/600/300/?image=451"
               img-alt="Image"
               img-top
@@ -97,7 +101,11 @@
               style="max-width: 20rem"
               class="mb-6"
             >
-              <b-button href="#" id="button1">Play</b-button>
+              <b-button href="#" id="button1"
+                ><router-link :to="{ name: 'quizz3' }">
+                  Play</router-link
+                ></b-button
+              >
             </b-card>
           </b-card-group>
         </b-row>

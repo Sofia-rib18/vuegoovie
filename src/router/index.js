@@ -13,6 +13,8 @@ import mundial from '../views/mundial.vue'
 import nacional from '../views/nacional.vue'
 import profile from '../views/profile.vue'
 import quizz from '../views/quizz.vue'
+import quizz2 from '../views/quizz2.vue'
+import quizz3 from '../views/quizz3.vue'
 import actor from '../views/actor.vue'
 import director from '../views/director.vue'
 import editar from '../views/editar.vue'
@@ -74,6 +76,16 @@ const routes = [
     path: '/quizzes/:quizzId',
     name: 'quizz',
     component: quizz
+  },
+  {
+    path: '/quizzes/:quizzId',
+    name: 'quizz2',
+    component: quizz2
+  },
+  {
+    path: '/quizzes/:quizzId',
+    name: 'quizz3',
+    component: quizz3
   },
   {
     path: '/series',
