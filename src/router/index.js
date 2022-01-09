@@ -15,6 +15,7 @@ import profile from '../views/profile.vue'
 import quizz from '../views/quizz.vue'
 import actor from '../views/actor.vue'
 import director from '../views/director.vue'
+import editar from '../views/editar.vue'
 
 import store from '../store/index.js'
 
@@ -91,6 +92,11 @@ const routes = [
     meta: {
       requiresAuth: true
     }
+  },
+  {
+    path: '/:profileId/:editarId',
+    name: 'editar',
+    component: editar,
   },
   {
     path: '/:actorId',

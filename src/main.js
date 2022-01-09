@@ -6,10 +6,12 @@ import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import LangFlag from 'vue-lang-code-flags'
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
+Vue.component('lang-flag', LangFlag)
 
 new Vue({
   router,

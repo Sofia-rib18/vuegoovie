@@ -1,10 +1,145 @@
 <template>
-  <div><h1>profile</h1></div>
+  <div id="profile">
+    <b-avatar size="100px"></b-avatar>
+    <h4 id="username">Armando <lang-flag iso='pt'/></h4>
+    <p id="description">We all make choices in life, but in the end our choices make us!</p>
+    <b-container class="bv-example-row">
+      <b-row>
+        <b-col>
+          <p id="follow">100 followers</p>
+        </b-col>
+        <b-col>
+          <p id="points">1000 points</p>
+        </b-col>
+      </b-row>
+    </b-container>
+    <router-link to="/:profileId/:editarId">
+      <b-button id="buttonEdit">EDIT ACCOUNT</b-button>
+    </router-link>
+    <h2>Watched Movies</h2>
+    <!-- Filmes -->
+    <b-container fluid="sm">
+      <b-row>
+        <b-card-group deck v-for="(movie, index) in getMovies" :key="index">
+          <b-card tag="article" style="max-width: 20rem" class="mb-6">
+            <b-card-img :src="movie.poster"></b-card-img>
+            <b-card-title>{{ movie.title }}</b-card-title>
+            <b-button
+              ><router-link
+                :to="{ name: 'filmes', params: { filmesId: movie.id } }"
+                >View more</router-link
+              ></b-button
+            >
+          </b-card>
+        </b-card-group>
+      </b-row>
+    </b-container>
+    <h2>Watched Series</h2>
+    <!-- Filmes -->
+    <b-container fluid="sm">
+      <b-row>
+        <b-card-group deck v-for="(movie, index) in getMovies" :key="index">
+          <b-card tag="article" style="max-width: 20rem" class="mb-6">
+            <b-card-img :src="movie.poster"></b-card-img>
+            <b-card-title>{{ movie.title }}</b-card-title>
+            <b-button
+              ><router-link
+                :to="{ name: 'filmes', params: { filmesId: movie.id } }"
+                >View more</router-link
+              ></b-button
+            >
+          </b-card>
+        </b-card-group>
+      </b-row>
+    </b-container>
+    <h2>Favorites</h2>
+    <!-- Filmes -->
+    <b-container fluid="sm">
+      <b-row>
+        <b-card-group deck v-for="(movie, index) in getMovies" :key="index">
+          <b-card tag="article" style="max-width: 20rem" class="mb-6">
+            <b-card-img :src="movie.poster"></b-card-img>
+            <b-card-title>{{ movie.title }}</b-card-title>
+            <b-button
+              ><router-link
+                :to="{ name: 'filmes', params: { filmesId: movie.id } }"
+                >View more</router-link
+              ></b-button
+            >
+          </b-card>
+        </b-card-group>
+      </b-row>
+    </b-container>
+    <h2>Badges</h2>
+    <b-container class="bv-example-row">
+      <b-row>
+        <b-col>
+          <b-avatar size="100px"></b-avatar>
+          <p id="badgeName">Futuristic</p>
+        </b-col>
+        <b-col>
+          <b-avatar size="100px"></b-avatar>
+          <p id="badgeName">Hawkeye</p>
+        </b-col>
+        <b-col>
+          <b-avatar size="100px"></b-avatar>
+          <p id="badgeName">Super Herois</p>
+        </b-col>
+        <b-col>
+          <b-avatar size="100px"></b-avatar>
+          <p id="badgeName">True Detective</p>
+        </b-col>
+      </b-row>
+    </b-container>
+  </div>
 </template>
 
 <script>
-export default {};
+  import { mapGetters } from "vuex";
+
+  export default {
+    computed: {
+      ...mapGetters(["getMovies"]),
+    },
+  };
 </script>
 
 <style>
+  @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+  #profile{
+    padding-top: 60px;
+    background-color: #070707;
+  }
+
+  #username{
+    font-family: "Anton", sans-serif;
+    padding-top: 20px;
+    color: #7c766d;
+  }
+
+  #description, #follow, #points, #badgeName{
+    color: #fef8f8;
+  }
+
+  #buttonEdit{
+    background-color: #070707;
+    border-color: #de2221;
+    color: #fef8f8;
+    width: 170px;
+    height: 40px;
+  }
+
+  #buttonEdit:hover{
+    background-color: #de2221;
+  }
+
+  #profile h2{
+    color: #7c766d;
+  }
+
+  footer{
+    background-color: #fef8f8;
+  }
+
 </style>
