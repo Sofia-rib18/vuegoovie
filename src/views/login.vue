@@ -3,7 +3,11 @@
     <b-container class="bv-example-row">
       <b-row>
         <b-col>
-          <img src="../assets/background.png" alt="" />
+          <img
+            src="../assets/background.png"
+            alt=""
+            style="max-height: 631px"
+          />
           <!-- <b-img src="@/assets/logo.png"></b-img> -->
         </b-col>
         <b-col>

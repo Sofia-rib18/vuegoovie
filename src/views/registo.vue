@@ -4,7 +4,11 @@
       <b-row>
         <b-col>
           <!-- <b-img src="../assets/background.png"></b-img> -->
-          <img src="../assets/background.png" alt="" />
+          <img
+            src="../assets/background.png"
+            alt=""
+            style="max-height: 631px"
+          />
         </b-col>
         <b-col>
           <b-row>
@@ -40,8 +44,15 @@
               label-for="input-2"
             >
               <b-form-select id="input-2" v-model="form.nacionality" required>
-                <b-form-select-option :value="null" disabled>Please select an option</b-form-select-option>
-                <b-form-select-option v-for="(country, index) in getCountries" :key="index" :value="country.value">{{country.text}}</b-form-select-option>
+                <b-form-select-option :value="null" disabled
+                  >Please select an option</b-form-select-option
+                >
+                <b-form-select-option
+                  v-for="(country, index) in getCountries"
+                  :key="index"
+                  :value="country.value"
+                  >{{ country.text }}</b-form-select-option
+                >
               </b-form-select>
             </b-form-group>
             <!-- Password -->
