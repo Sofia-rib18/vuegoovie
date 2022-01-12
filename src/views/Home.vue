@@ -70,9 +70,12 @@
               tag="article"
               style="max-width: 20rem"
               class="mb-6"
+              id="quizz"
             >
               <b-button href="#" id="button1"
-                ><router-link :to="{ name: 'quizz' }">
+                ><router-link
+                  :to="{ name: 'quizz', params: { quizzId: 'quizz' } }"
+                >
                   Play</router-link
                 ></b-button
               >
@@ -85,9 +88,12 @@
               tag="article"
               style="max-width: 20rem"
               class="mb-6"
+              id="quizz2"
             >
               <b-button href="#" id="button1"
-                ><router-link :to="{ name: 'quizz2' }">
+                ><router-link
+                  :to="{ name: 'quizz2', params: { quizzId: 'quizz2' } }"
+                >
                   Play</router-link
                 ></b-button
               >
@@ -100,9 +106,12 @@
               tag="article"
               style="max-width: 20rem"
               class="mb-6"
+              id="quizz3"
             >
               <b-button href="#" id="button1"
-                ><router-link :to="{ name: 'quizz3' }">
+                ><router-link
+                  :to="{ name: 'quizz3', params: { quizzId: 'quizz3' } }"
+                >
                   Play</router-link
                 ></b-button
               >
