@@ -580,6 +580,7 @@ export default new Vuex.Store({
     getMovies: (state) => state.films,
     getSeries: (state) => state.series,
     getCountries: (state) => state.countries,
+    getUsers: (state) => state.users,
   },
   mutations: {
     SET_LOGGED_USER(state, payload) {

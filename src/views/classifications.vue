@@ -20,32 +20,27 @@
     <b-row>
       <div>
         <b-col></b-col>
-        <b-col
-          ><b-table small :fields="fields" :items="items" responsive="sm">
-            <!-- A virtual column -->
-            <template #cell(index)="data">
-              {{ data.index + 1 }}
-            </template>
-
-            <!-- A custom formatted column -->
-            <template #cell(name)="data">
-              <b v-html="data.value.html"></b>
-              <b class="text-info"
-                ><a href="">{{ data.value.username }}</a></b
-              >
-            </template>
-
-            <!-- A virtual composite column -->
-            <template #cell(nationality)="data">
-              {{ data.item.nationality }}
-            </template>
-
-            <!-- Optional default data cell scoped slot -->
-            <template #cell(points)="data">
-              <i>{{ data.item.points }}</i>
-            </template>
-          </b-table></b-col
-        >
+        <b-col>
+          <b-table-simple>
+            <b-thead>
+              <b-tr>
+                <b-th>Index</b-th>
+                <b-th>Name</b-th>
+                <b-th>Points</b-th>
+                <b-th>Nacionality</b-th>
+              </b-tr>
+              <b-tr v-for="(user, index) in getUsers" :key="index">
+                <b-td v-if="user.type != 'admin'">{{index}}</b-td>
+                <b-td v-if="user.type != 'admin'">{{user.username}}</b-td>
+                <b-td v-if="user.type != 'admin'">{{user.points}}</b-td>
+                <b-td v-if="user.type != 'admin'">
+                  <lang-flag :iso='user.location'/>
+                  <!-- {{user.location}} -->
+                </b-td>
+              </b-tr>
+            </b-thead>
+          </b-table-simple>
+          </b-col>
         <b-col></b-col>
       </div>
     </b-row>
@@ -53,54 +48,12 @@
 </template>
 
 <script>
+  import { mapGetters } from "vuex";
+
 export default {
-  data() {
-    return {
-      fields: [
-        // A virtual column that doesn't exist in items
-        "index",
-        // A column that needs custom formatting
-        "name",
-        // A regular column
-        "points",
-        // A regular column
-        "nationality",
-      ],
-      items: [
-        {
-          name: {
-            html: `<img src='.../assets/Analista de sistemas (1).png'/>`,
-            username: "Armando_MorningStar",
-          },
-          nationality: "Portuguese",
-          points: "1000pts",
-        },
-        {
-          name: {
-            html: `<img src='.../assets/Analista de sistemas (1).png'/>`,
-            username: "Armando_MorningStar",
-          },
-          nationality: "Portuguese",
-          points: "1000pts",
-        },
-        {
-          name: {
-            html: `<img src='.../assets/Analista de sistemas (1).png'/>`,
-            username: "Armando_MorningStar",
-          },
-          nationality: "Portuguese",
-          points: "1000pts",
-        },
-        {
-          name: {
-            html: `<img src='.../assets/Analista de sistemas (1).png'/>`,
-            username: "Armando_MorningStar",
-          },
-          nationality: "Portuguese",
-          points: "1000pts",
-        },
-      ],
-    };
+  
+  computed: {
+    ...mapGetters(["getUsers"]),
   },
 };
 </script>
