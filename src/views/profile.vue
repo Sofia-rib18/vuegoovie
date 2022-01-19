@@ -71,7 +71,7 @@
       </b-row>
     </b-container>
     <h2>Badges</h2>
-    <b-container class="bv-example-row">
+    <b-container class="bv-example-row" id="badgeContainer">
       <b-row>
         <b-col>
           <b-avatar size="100px"></b-avatar>
@@ -134,8 +134,19 @@
     background-color: #de2221;
   }
 
+  #follow, #points{
+    padding-bottom: 30px;
+    padding-top: 20px;
+  }
+
   #profile h2{
     color: #7c766d;
+    padding-top: 30px;
+    padding-bottom:30px
+  }
+
+  #badgeContainer{
+    padding-bottom: 40px;
   }
 
   footer{
