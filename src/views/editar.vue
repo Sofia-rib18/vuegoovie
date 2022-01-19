@@ -3,7 +3,7 @@
     <b-avatar size="100px">
         <template #badge><b-icon icon="plus"></b-icon></template>
     </b-avatar>
-    <b-container class="bv-example-row">
+    <b-container class="bv-example-row" id="formEdit">
         <b-row>
             <b-col>
                 <p id="labelEdit">Username:</p>
@@ -17,7 +17,7 @@
             </b-col>
         </b-row>
     </b-container>
-    <b-container class="bv-example-row">
+    <b-container class="bv-example-row" id="buttonsEdit">
         <b-row>
             <b-col>
                 <b-button id="buttonEdit">EDIT ACCOUNT</b-button>
@@ -56,10 +56,24 @@ export default {
 
     #labelEdit{
         color: #fef8f8;
+        padding-bottom: 35px;
     }
 
     #flagEdit{
         width: 50px;
         height: 50px;
+    }
+
+    #formEdit{
+        padding-top: 100px;
+    }
+
+    #flagEdit{
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    #buttonsEdit{
+        padding-bottom: 40px;
     }
 </style>
