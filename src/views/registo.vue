@@ -118,6 +118,7 @@ export default {
         password: "",
         passwordConfirm: "",
         type: "regular",
+        points: 0,
       },
     };
   },
