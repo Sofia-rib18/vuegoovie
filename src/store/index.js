@@ -15,8 +15,23 @@ export default new Vuex.Store({
         username: 'User',
         password: 'Esmad_2122',
         type: 'regular',
-        location: 'Portugal'
-      }
+        location: 'pt',
+        points: 70
+      },
+      {
+        username: 'User1',
+        password: 'Esmad_2122',
+        type: 'regular',
+        location: 'fr',
+        points: 60
+      },
+      {
+        username: 'User2',
+        password: 'Esmad_2122',
+        type: 'regular',
+        location: 'it',
+        points: 50
+      },
     ],
     loggedUser: null,
     films: localStorage.films ? JSON.parse(localStorage.films) : [
