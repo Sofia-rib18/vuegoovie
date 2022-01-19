@@ -12,7 +12,7 @@
       </div>
       <b-form @submit.prevent="gessMovie">
         <b-form-input
-          id="input-1"
+          id="input-3"
           type="text"
           v-model="answer"
           required
@@ -196,7 +196,7 @@ export default {
 </script>
 
 <style>
-#input-1 {
+#input-5 {
   margin-top: 30px;
   width: 600px;
   background-color: transparent;
