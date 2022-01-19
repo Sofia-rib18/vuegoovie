@@ -18,6 +18,7 @@ import quizz3 from '../views/quizz3.vue'
 import actor from '../views/actor.vue'
 import director from '../views/director.vue'
 import editar from '../views/editar.vue'
+import game from '../views/game.vue'
 
 import store from '../store/index.js'
 
@@ -71,6 +72,11 @@ const routes = [
     path: '/quizzes',
     name: 'quizzes',
     component: quizzes
+  },
+  {
+    path: '/quizzes/game',
+    name: 'game',
+    component: game
   },
   {
     path: '/quizzes/:quizzId',
