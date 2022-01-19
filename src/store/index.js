@@ -59,80 +59,13 @@ export default new Vuex.Store({
           name: 'Lashana Lynch',
           photo: 'https://m.media-amazon.com/images/M/MV5BMjI0ZGE0ZTYtYmY1MS00MGU0LWEwMDQtMzYxMDFmMmFjZjUyXkEyXkFqcGdeQXVyMzczOTY5ODk@._V1_.jpg'
         }, {
-          name: 'Ben Whishaw',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTc1MDYzNzY4MF5BMl5BanBnXkFtZTcwMDcwNzU0OA@@._V1_.jpg'
-        }, {
-          name: 'Naomie Harris',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTUyMDU1MTU2N15BMl5BanBnXkFtZTgwODkyNzQ3MDE@._V1_UY1200_CR84,0,630,1200_AL_.jpg'
-        }, {
-          name: 'Jeffrey Wright',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTg0ODMzMzIyN15BMl5BanBnXkFtZTcwMTQxNTI4Mw@@._V1_.jpg'
-        }, {
-          name: 'Christoph Waltz',
-          photo: 'https://m.media-amazon.com/images/M/MV5BOTA5OTcyMTU2Nl5BMl5BanBnXkFtZTcwMjA4MTMyMw@@._V1_.jpg'
-        }, {
-          name: 'Ralph Fiennes',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMzc5MjE1NDgyN15BMl5BanBnXkFtZTcwNzg2ODgwNA@@._V1_UY264_CR12,0,178,264_AL_.jpg'
-        }, {
           name: 'Ana de Armas',
           photo: 'https://m.media-amazon.com/images/M/MV5BMWM3MDMzNjMtODM5Ny00YmY0LWJhNzQtNTE1ZDNlNjllNDQ0XkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_UY1200_CR585,0,630,1200_AL_.jpg'
-        }, {
-          name: 'Billy Magnussen',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTg0MjA0Nzc4MF5BMl5BanBnXkFtZTcwNDU3NTE2Mw@@._V1_.jpg'
-        }, {
-          name: 'Rory Kinnear',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTQwOTMwMDM5OV5BMl5BanBnXkFtZTcwODQ1MDExOA@@._V1_.jpg'
-        }, {
-          name: 'David Dencik',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMjI4OTExNTg3NF5BMl5BanBnXkFtZTgwNzE2NzQ4ODE@._V1_.jpg'
         },],
         whereWatch: 'Amazon',
       },
       {
         id: 2,
-        title: 'Dune',
-        year: 2021,
-        time: '2h 35m',
-        poster: 'https://m.media-amazon.com/images/M/MV5BN2FjNmEyNWMtYzM0ZS00NjIyLTg5YzYtYThlMGVjNzE1OGViXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1000_.jpg',
-        trailer: 'https://www.youtube.com/watch?v=n9xhJrPXop4',
-        imdbScore: '8.2',
-        genre: ['Action', 'Adventure', 'Drama'],
-        sipnose: "Feature adaptation of Frank Herbert's science fiction novel about the son of a noble family entrusted with the protection of the most valuable asset and most vital element in the galaxy.",
-        director: 'Denis Villeneuve',
-        actors: [{
-          name: 'Timothée Chalamet',
-          photo: 'https://m.media-amazon.com/images/M/MV5BOWU1Nzg0M2ItYjEzMi00ODliLThkODAtNGEyYzRkZTBmMmEzXkEyXkFqcGdeQXVyNDk2Mzk2NDg@._V1_.jpg'
-        }, {
-          name: 'Rebecca Ferguson',
-          photo: 'https://m.media-amazon.com/images/M/MV5BNzA4NDA1MTA5NV5BMl5BanBnXkFtZTcwNjMyNTQ3OA@@._V1_.jpg'
-        }, {
-          name: 'Zendaya',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMjAxZTk4NDAtYjI3Mi00OTk3LTg0NDEtNWFlNzE5NDM5MWM1XkEyXkFqcGdeQXVyOTI3MjYwOQ@@._V1_.jpg'
-        }, {
-          name: 'Oscar Isaac',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTQ2ODE2NDQ5OF5BMl5BanBnXkFtZTcwOTU3OTM1OQ@@._V1_.jpg'
-        }, {
-          name: 'Jason Momoa',
-          photo: 'https://m.media-amazon.com/images/M/MV5BODJlNWQ4ZjUtYjRhNi00NGQ1LWE3YTItYjRmZGI3YzI4YTEyXkEyXkFqcGdeQXVyMTA2MDIzMDE5._V1_UY264_CR109,0,178,264_AL_.jpg'
-        }, {
-          name: 'Stellan Skarsgård',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTg4NDUzOTY0N15BMl5BanBnXkFtZTYwNjYxODE0._V1_.jpg'
-        }, {
-          name: 'Josh Brolin',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTQ1MzYyMjQ0Nl5BMl5BanBnXkFtZTcwMTA0ODkyMg@@._V1_.jpg'
-        }, {
-          name: 'Javier Bardem',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTY1NTc4NTYzMF5BMl5BanBnXkFtZTcwNDIwOTY1NA@@._V1_UY1200_CR86,0,630,1200_AL_.jpg'
-        }, {
-          name: 'Dave Bautista',
-          photo: 'https://m.media-amazon.com/images/M/MV5BNTZkYzU0ZGUtZTk1MC00MzJjLWFmMzItY2M0ODY1ZmI2OGQ0XkEyXkFqcGdeQXVyMjI0MjgwNjc@._V1_UY264_CR146,0,178,264_AL_.jpg'
-        }, {
-          name: '	Charlotte Rampling',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTU0MTgyMjIzMF5BMl5BanBnXkFtZTcwOTc3NTA0Nw@@._V1_UY1200_CR85,0,630,1200_AL_.jpg'
-        },],
-        whereWatch: 'Amazon',
-      }, {
-        id: 3,
         title: 'Knives Out',
         year: 2019,
         time: '2h 10m',
@@ -141,7 +74,7 @@ export default new Vuex.Store({
         imdbScore: '7.9',
         genre: ['Comedy', 'Crime', 'Drama'],
         sipnose: "A detective investigates the death of a patriarch of an eccentric, combative family.",
-        director: 'Denis Villeneuve',
+        director: 'Rian Johnson',
         actors: [{
           name: 'Daniel Craig',
           photo: 'https://m.media-amazon.com/images/M/MV5BMjEzMjk4NDU4MF5BMl5BanBnXkFtZTcwMDMyNjQzMg@@._V1_UY1200_CR88,0,630,1200_AL_.jpg'
@@ -157,45 +90,122 @@ export default new Vuex.Store({
         }, {
           name: 'Michael Shannon',
           photo: 'https://m.media-amazon.com/images/M/MV5BMjE0NzM5MTc5OF5BMl5BanBnXkFtZTgwMjc3ODYxODE@._V1_.jpg',
+        },],
+        whereWatch: 'Amazon',
+      },
+      {
+        id: 3,
+        title: 'The Karate Kid',
+        year: 1984,
+        time: '2h 06m',
+        poster: 'https://m.media-amazon.com/images/M/MV5BNTkzY2YzNmYtY2ViMS00MThiLWFlYTEtOWQ1OTBiOGEwMTdhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg',
+        trailer: 'https://www.youtube.com/embed/xlnm0NtPoVs',
+        imdbScore: '7.3',
+        genre: ['Action', 'Family', 'Drama'],
+        sipnose: "A martial arts master agrees to teach karate to a bullied teenager.",
+        director: 'Rian Johnson',
+        actors: [{
+          name: 'Ralph Macchio',
+          photo: 'https://m.media-amazon.com/images/M/MV5BMjExMjk0NTA5MF5BMl5BanBnXkFtZTcwMjM4MzU1Mw@@._V1_UY1200_CR103,0,630,1200_AL_.jpg'
         }, {
-          name: 'Don Johson',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTg4ODYwOTU0N15BMl5BanBnXkFtZTgwNjc5NDM2MTE@._V1_UY1200_CR154,0,630,1200_AL_.jpg'
+          name: 'Pat Morita',
+          photo: 'https://m.media-amazon.com/images/M/MV5BODIyNzYwNjE4NV5BMl5BanBnXkFtZTcwNzA3MzQ3Mw@@._V1_UY1200_CR99,0,630,1200_AL_.jpg'
         }, {
-          name: 'Toni Collette',
-          photo: 'https://m.media-amazon.com/images/M/MV5BODYzOTE3ODc1Ml5BMl5BanBnXkFtZTgwODYwMjE4NTM@._V1_UY1200_CR156,0,630,1200_AL_.jpg'
+          name: 'William Zabka',
+          photo: 'https://m.media-amazon.com/images/M/MV5BMzlkODQ0ODMtYmQ5NS00MWZhLTlkMjAtYTMwYzg5MjNkNmFmXkEyXkFqcGdeQXVyMjUwNzgxNjk@._V1_UY1200_CR174,0,630,1200_AL_.jpg'
         }, {
-          name: 'LaKeith Stanfield',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTU3NTg3MTc5NV5BMl5BanBnXkFtZTgwNzUzMzg1MzI@._V1_.jpg'
+          name: 'Elisabeth Shue',
+          photo: 'https://static.tvtropes.org/pmwiki/pub/images/elizabeth_shue_2012.jpeg'
         }, {
-          name: 'Christopher Plummer',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTU5MzQ5MDY3NF5BMl5BanBnXkFtZTcwNzMxOTU5Ng@@._V1_.jpg'
+          name: 'Martin Kove',
+          photo: 'https://upload.wikimedia.org/wikipedia/commons/5/5d/Martin_Kove_%2844524134200%29.jpg',
+        },],
+        whereWatch: 'Netflix',
+      },
+      {
+        id: 4,
+        title: 'Matrix',
+        year: 1999,
+        time: '2h 16m',
+        poster: 'https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_FMjpg_UX1000_.jpg',
+        trailer: 'https://www.youtube.com/embed/m8e-FF8MsqU',
+        imdbScore: '8.7',
+        genre: ['Action', 'Sci-Fi'],
+        sipnose: "When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.",
+        director: 'Lana Wachowski',
+        actors: [{
+          name: 'Keanu Reeves',
+          photo: 'https://m.media-amazon.com/images/M/MV5BYTkzODI4MDMtNDNmZC00NDZlLWFmNTktNDRhOWE2YzhlZTQ2XkEyXkFqcGdeQXVyMTE1MTYxNDAw._V1_.jpg'
         }, {
-          name: 'Katherine Langford',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTA0ODU1OTE5NTNeQTJeQWpwZ15BbWU4MDUwMzg2NDQz._V1_UY1200_CR84,0,630,1200_AL_.jpg'
+          name: 'Laurence Fishburne',
+          photo: 'https://m.media-amazon.com/images/M/MV5BMTc0NjczNDc1MV5BMl5BanBnXkFtZTYwMDU0Mjg1._V1_UY1200_CR85,0,630,1200_AL_.jpg'
         }, {
-          name: 'Jaeden Martell',
-          photo: 'https://m.media-amazon.com/images/M/MV5BYmNkZjgwZmYtNzNjOC00ZGUxLTgzMmQtYWU0NDQyNmE4NWM5XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_UY1200_CR85,0,630,1200_AL_.jpg'
+          name: 'Carrie-Anne Moss',
+          photo: 'https://m.media-amazon.com/images/M/MV5BMTYxMjgwNzEwOF5BMl5BanBnXkFtZTcwNTQ0NzI5Ng@@._V1_UY1200_CR138,0,630,1200_AL_.jpg'
         }, {
-          name: 'Riki Lindhome',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTAxNzM1NTkxOTleQTJeQWpwZ15BbWU3MDUwNDU2MjE@._V1_UY1200_CR113,0,630,1200_AL_.jpg'
+          name: 'Hugo Weaving',
+          photo: 'https://m.media-amazon.com/images/M/MV5BMjAxMzAyNDQyMF5BMl5BanBnXkFtZTcwOTM4ODcxMw@@._V1_UY1200_CR106,0,630,1200_AL_.jpg'
         }, {
-          name: 'Edi Patterson',
-          photo: 'https://m.media-amazon.com/images/M/MV5BZDQ4ODc5YTAtMDhiOC00NWM0LWEwY2EtNTI1Y2JjOGZjZGU1XkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_UY1200_CR85,0,630,1200_AL_.jpg'
+          name: 'Joe Pantoliano',
+          photo: 'https://m.media-amazon.com/images/M/MV5BODBlYWY1MWUtZDdmYS00Y2VkLThmNDEtNGE4ZDAzNjk5NmI1XkEyXkFqcGdeQXVyNjUxMjc1OTM@._V1_UY1200_CR170,0,630,1200_AL_.jpg',
+        },],
+        whereWatch: 'HBO',
+      },
+      {
+        id: 5,
+        title: 'Encanto',
+        year: 2021,
+        time: '1h 42m',
+        poster: 'https://m.media-amazon.com/images/M/MV5BNjE5NzA4ZDctOTJkZi00NzM0LTkwOTYtMDI4MmNkMzIxODhkXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_.jpg',
+        trailer: 'https://www.youtube.com/embed/togmdDHG3Pw',
+        imdbScore: '7.3',
+        genre: ['Animation', 'Adventure', 'Comedy'],
+        sipnose: "A young Colombian girl has to face the frustration of being the only member of her family without magical powers.",
+        director: 'Jared Bush',
+        actors: [{
+          name: 'Stephanie Beatriz',
+          photo: 'https://m.media-amazon.com/images/M/MV5BYWY3ZGQ0OGUtZDNjYi00MmRkLWE4YmMtYzk3MzAwZjQxMDRlXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_UY1200_CR557,0,630,1200_AL_.jpg'
         }, {
-          name: 'Frank Oz',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTI1NTM4ODA0OV5BMl5BanBnXkFtZTYwODMxMjQ0._V1_UY1200_CR117,0,630,1200_AL_.jpg'
+          name: 'María Cecilia Botero',
+          photo: 'https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/335575/335575_173x253.jpg'
         }, {
-          name: 'K Callan',
-          photo: 'https://m.media-amazon.com/images/M/MV5BZDliYjk2YjAtMzU5Yi00M2Q1LWJjZGQtNjkzOGM4MDM0MWEzXkEyXkFqcGdeQXVyMDc0NzUzNA@@._V1_.jpg'
+          name: 'John Leguizamo',
+          photo: 'https://m.media-amazon.com/images/M/MV5BNTEyMjMxNDg5NF5BMl5BanBnXkFtZTcwNzczOTY4MQ@@._V1_UY1200_CR172,0,630,1200_AL_.jpg'
         }, {
-          name: 'Noah Segan',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTQ5NTE2ODI1OV5BMl5BanBnXkFtZTcwNjYzOTk0Ng@@._V1_.jpg'
+          name: 'Wilmer Valderrama',
+          photo: 'https://m.media-amazon.com/images/M/MV5BY2U2NDkyMGYtNzg3YS00YmU0LTkyNzEtNWE5YzM0NmM1NzI2XkEyXkFqcGdeQXVyNTE0Mzg0MzM@._V1_UY1200_CR127,0,630,1200_AL_.jpg'
         }, {
-          name: 'M. Emmet Walsh',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTYxNjgyNzgwMl5BMl5BanBnXkFtZTcwODA2MTM0OA@@._V1_UY1200_CR145,0,630,1200_AL_.jpg'
+          name: 'Jessica Darrow',
+          photo: 'https://m.media-amazon.com/images/M/MV5BZDBkOWZjNTMtNTE0OC00ODI1LThkNDEtNzI5Nzg3OTlkMTMxXkEyXkFqcGdeQXVyNzE4Njc3NjQ@._V1_UY1200_CR165,0,630,1200_AL_.jpg',
+        },],
+        whereWatch: 'Disney+',
+      },
+      {
+        id: 6,
+        title: 'Ricki and the Flash',
+        year: 2015,
+        time: '1h 41m',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTY1NzIxNzkzM15BMl5BanBnXkFtZTgwMzAzNjIzNjE@._V1_.jpg',
+        trailer: 'https://www.youtube.com/embed/x8PVK6Hky2A',
+        imdbScore: '5.9',
+        genre: ['Comedy', 'Drama', 'Music'],
+        sipnose: "A musician who gave up everything for her dream of rock-and-roll stardom returns home, looking to make things right with her family.",
+        director: 'Jonathan Demme',
+        actors: [{
+          name: 'Meryl Streep',
+          photo: 'https://m.media-amazon.com/images/M/MV5BMTU4Mjk5MDExOF5BMl5BanBnXkFtZTcwOTU1MTMyMw@@._V1_.jpg'
         }, {
-          name: 'Marlene Forte',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMjE5NTkyNDUyOF5BMl5BanBnXkFtZTgwODE2MDcyMDI@._V1_.jpg'
+          name: 'Kevin Kline',
+          photo: 'https://m.media-amazon.com/images/M/MV5BMTMxMjcxMzMzMV5BMl5BanBnXkFtZTcwNjQzOTQ4Mg@@._V1_UY1200_CR85,0,630,1200_AL_.jpg'
+        }, {
+          name: 'Mamie Gummer',
+          photo: 'https://m.media-amazon.com/images/M/MV5BMTc2MDk3MTI1N15BMl5BanBnXkFtZTcwMDM0NjM1Mg@@._V1_UY1200_CR93,0,630,1200_AL_.jpg'
+        }, {
+          name: 'Sebastian Stan',
+          photo: 'https://m.media-amazon.com/images/M/MV5BNTk2OGU4NzktODhhOC00Nzc2LWIyNzYtOWViMjljZGFiNTMxXkEyXkFqcGdeQXVyMTE1NTQwOTk@._V1_UY1200_CR146,0,630,1200_AL_.jpg'
+        }, {
+          name: 'Rick Springfield',
+          photo: 'https://m.media-amazon.com/images/M/MV5BMjAzMzkxMzAwOF5BMl5BanBnXkFtZTcwMDk1MzMxMw@@._V1_.jpg',
         },],
         whereWatch: 'Amazon',
       },
@@ -231,16 +241,7 @@ export default new Vuex.Store({
         }, {
           name: 'David Schwimmer',
           photo: 'https://m.media-amazon.com/images/M/MV5BMTQ2Mjg5ODIzNF5BMl5BanBnXkFtZTgwNjIwMjI0ODE@._V1_.jpg'
-        }, {
-          name: 'James Michael Tyler',
-          photo: 'https://m.media-amazon.com/images/M/MV5BODE5NGEyZjktMGRlNy00OTNjLWE1NDYtMzJkYWI5MmM3YWY2XkEyXkFqcGdeQXVyNTc2ODgwNw@@._V1_UY1200_CR85,0,630,1200_AL_.jpg'
-        }, {
-          name: 'Maggie Wheeler',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTA5NjA1NDM4NDFeQTJeQWpwZ15BbWU3MDM2Mjk5MDQ@._V1_UY1200_CR124,0,630,1200_AL_.jpg'
-        }, {
-          name: 'Paul Rudd',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTY4NTEwNDg1MV5BMl5BanBnXkFtZTgwODMwMDA0ODE@._V1_.jpg'
-        },],
+        }],
         whereWatch: 'HBO',
       },
       {
@@ -253,7 +254,7 @@ export default new Vuex.Store({
         trailer: 'https://www.youtube.com/watch?v=vLOQkT2B_rk',
         imdbScore: '8.7',
         genre: ['Action', 'Crime', 'Fantasy'],
-        sipnose: 'A mystery drama in which detectives with different personalities solve various cases.',
+        sipnose: 'A heroic drama that follows capable but bad cop Ryoo Soo-yeol regaining his humanity after meeting the righteous but crazy "K".',
         director: 'Seon-dong Yoo',
         actors: [{
           name: 'Lee Dong-Wook',
@@ -267,56 +268,131 @@ export default new Vuex.Store({
         }, {
           name: 'Wi Ha-Joon',
           photo: 'https://i.mydramalist.com/xzdP0_5f.jpg'
+        }, {
+          name: 'Kim Hieora',
+          photo: 'https://asianwiki.com/images/0/03/Kim_Hieora-1989-p1.jpg'
         },],
         whereWatch: 'iQIYI',
       },
       {
         id: 3,
-        title: 'WandaVision',
-        year: '2021',
-        time: '38m',
-        seasons: 1,
-        poster: 'https://m.media-amazon.com/images/M/MV5BZGEwYmMwZmMtMTQ3MS00YWNhLWEwMmQtZTU5YTIwZmJjZGQ0XkEyXkFqcGdeQXVyMTI5MzA5MjA1._V1_FMjpg_UX1000_.jpg',
-        trailer: 'https://www.youtube.com/watch?v=sj9J2ecsSpo',
-        imdbScore: '8.0',
-        genre: ['Comedy', 'Action', 'Drama'],
-        sipnose: 'Blends the style of classic sitcoms with the MCU, in which Wanda Maximoff and Vision - two super-powered beings living their ideal suburban lives - begin to suspect that everything is not as it seems.',
-        director: 'Matt Shakman',
+        title: 'Euphoria',
+        year: '2019 -',
+        time: '55m',
+        seasons: 2,
+        poster: 'https://m.media-amazon.com/images/M/MV5BMDMzZDkyNzEtYTY5Ni00NzlhLWI4MzUtY2UzNjNmMjI1YzIzXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_FMjpg_UX1000_.jpg',
+        trailer: 'https://www.youtube.com/embed/cajLoaFl2Zo',
+        imdbScore: '8.4',
+        genre: ['Drama'],
+        sipnose: 'A look at life for a group of high school students as they grapple with issues of drugs, sex, and violence.',
+        director: 'Sam Levinson',
         actors: [{
-          name: 'Elizabeth Olsen',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMjEzMjA0ODk1OF5BMl5BanBnXkFtZTcwMTA4ODM3OQ@@._V1_.jpg'
+          name: 'Hunter Schafer',
+          photo: 'https://m.media-amazon.com/images/M/MV5BYTE4ZmU3NTQtMWY0OC00YmQ5LThlOTEtMTc3NjcwZjMwN2QzXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_UY1200_CR84,0,630,1200_AL_.jpg'
         }, {
-          name: 'Paul Bettany',
-          photo: 'https://m.media-amazon.com/images/M/MV5BNjUzMDIzNjkxMl5BMl5BanBnXkFtZTgwNjgyNzA0MjI@._V1_UY1200_CR585,0,630,1200_AL_.jpg'
+          name: 'Zendaya',
+          photo: 'https://m.media-amazon.com/images/M/MV5BMjAxZTk4NDAtYjI3Mi00OTk3LTg0NDEtNWFlNzE5NDM5MWM1XkEyXkFqcGdeQXVyOTI3MjYwOQ@@._V1_UY1200_CR135,0,630,1200_AL_.jpg'
         }, {
-          name: 'Kathryn Hahn',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMjE1OTcxNDczMl5BMl5BanBnXkFtZTcwMDA1NDcyMQ@@._V1_.jpg'
+          name: 'Angus Cloud',
+          photo: 'https://m.media-amazon.com/images/M/MV5BZmI3MjMxYTQtOGVlNi00MjJkLTkzYjctMWU2ZmEyZTczZjFiXkEyXkFqcGdeQXVyMTI1MTQ4MTM3._V1_.jpg'
         }, {
-          name: 'Teyonah Parris',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMjIzNzc4MTg3NF5BMl5BanBnXkFtZTgwMDE4ODM0NTE@._V1_UY264_CR43,0,178,264_AL_.jpg'
+          name: 'Sydney Sweeney',
+          photo: 'https://m.media-amazon.com/images/M/MV5BOTVjOTkxNjMtNDJiYS00YzEzLThmZTItZjJhM2E4NWQyM2Q2XkEyXkFqcGdeQXVyNzM1NTU0NA@@._V1_.jpg'
         }, {
-          name: 'Kat Dennings',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMTQ0NjU4MDU1Nl5BMl5BanBnXkFtZTYwMjQ5Mjk1._V1_.jpg'
+          name: 'Jacob Elordi',
+          photo: 'https://i.pinimg.com/originals/ed/03/d6/ed03d6c2b7225c2d8be27fabb06a7b8d.jpg'
+        }],
+        whereWatch: 'HBO',
+      },
+      {
+        id: 4,
+        title: 'Peaky Blinders',
+        year: '2013 - 2022',
+        time: '1h',
+        seasons: 5,
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTkzNjEzMDEzMF5BMl5BanBnXkFtZTgwMDI0MjE4MjE@._V1_.jpg',
+        trailer: 'https://www.youtube.com/embed/2nsT9uQPIrk',
+        imdbScore: '8.8',
+        genre: ['Drama', 'Crime'],
+        sipnose: 'A gangster family epic set in 1900s England, centering on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby.',
+        director: 'Steven Knight',
+        actors: [{
+          name: 'Cillian Murphy',
+          photo: 'https://m.media-amazon.com/images/M/MV5BMTMyODk0MDUyOF5BMl5BanBnXkFtZTcwNzQyODU2Mw@@._V1_.jpg'
         }, {
-          name: 'Evan Peters',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMjA2NDg2ODYwMV5BMl5BanBnXkFtZTgwNTE4MzQyNzE@._V1_UY1200_CR89,0,630,1200_AL_.jpg'
+          name: 'Paul Anderson',
+          photo: 'https://m.media-amazon.com/images/M/MV5BNzQ5ZTk5MGUtYjRmYi00NTIzLWFlYjMtZjk5MGFlNTg5ODViXkEyXkFqcGdeQXVyMzIzNjk4NzM@._V1_.jpg'
         }, {
-          name: 'Randall Park',
-          photo: 'https://m.media-amazon.com/images/M/MV5BY2ViZjE4ZmItM2M5NC00NTI4LWI3YjEtZjk4ZWU5ODZkZThjXkEyXkFqcGdeQXVyMzQ5MjIzMA@@._V1_UY1200_CR85,0,630,1200_AL_.jpg'
+          name: 'Helen McCrory',
+          photo: 'https://m.media-amazon.com/images/M/MV5BMTQ2MDM2OTU0MV5BMl5BanBnXkFtZTgwMDk2MTIzNTE@._V1_UY1200_CR580,0,630,1200_AL_.jpg'
         }, {
-          name: 'Josh Stamberg',
-          photo: 'https://m.media-amazon.com/images/M/MV5BNTE3ODE3MTAwOF5BMl5BanBnXkFtZTgwMDM4MzMwNzE@._V1_UY1200_CR84,0,630,1200_AL_.jpg'
+          name: 'Sophie Rundle',
+          photo: 'https://m.media-amazon.com/images/M/MV5BMzIwODI2NzY2OV5BMl5BanBnXkFtZTgwNDk5Mjc0ODE@._V1_.jpg'
         }, {
-          name: 'Julian Hilliard',
-          photo: 'https://m.media-amazon.com/images/M/MV5BMjYyMDA3NzUtMmIxNS00OTg4LTk4Y2EtZmRhM2IwZTVjN2Q5XkEyXkFqcGdeQXVyODA4MTYwMjc@._V1_UX178_CR0,0,178,264_AL_.jpg'
+          name: 'Ned Dennehy',
+          photo: 'https://m.media-amazon.com/images/M/MV5BYzYyNjY3MTUtZWQ4MC00MjQ4LTliNTItMDMwNDczYjQyZDIzXkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg'
+        }],
+        whereWatch: 'Netflix',
+      },
+      {
+        id: 5,
+        title: 'Killing Eve',
+        year: '2018 - 2022',
+        time: '42m',
+        seasons: 4,
+        poster: 'https://m.media-amazon.com/images/M/MV5BOThjOGFmYzctMmI5Ni00ZjdhLWI2ZDktMjUyYjVlMDEzN2UyXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_.jpg',
+        trailer: 'https://www.youtube.com/embed/XVTZhOLpXjI',
+        imdbScore: '8.8',
+        genre: ['Drama', 'Action', 'Adventure'],
+        sipnose: 'After a series of events, the lives of a security operative and an assassin become inextricably linked.',
+        director: 'Phoebe Waller-Bridge',
+        actors: [{
+          name: 'Jodie Comer',
+          photo: 'https://m.media-amazon.com/images/M/MV5BZmViMjQxYTUtZDExNy00NjU1LWI4MmEtY2RhODRkMzNkODM1XkEyXkFqcGdeQXVyNjkwNzEwMzY@._V1_.jpg'
         }, {
-          name: 'Jett Klyne',
-          photo: 'https://m.media-amazon.com/images/M/MV5BYzYzODZmMWMtNGEzZS00YTk5LWI1MDEtNzUyZjFlOTBiMjdiXkEyXkFqcGdeQXVyNTg3OTIyNzc@._V1_UY1200_CR85,0,630,1200_AL_.jpg'
+          name: 'Sandra Oh',
+          photo: 'https://m.media-amazon.com/images/M/MV5BMTMyNzYyNDE4MV5BMl5BanBnXkFtZTcwOTkxMDQ2NA@@._V1_.jpg'
         }, {
-          name: 'Asif Ali',
-          photo: 'https://m.media-amazon.com/images/M/MV5BM2MxYWFhYjEtZjliNi00ZjQwLTk5ZDUtOGI5MzhjYWQ1NzVhXkEyXkFqcGdeQXVyMTk4ODcyMTM@._V1_UY264_CR39,0,178,264_AL_.jpg'
-        },],
-        whereWatch: 'Disney +',
+          name: 'Fiona Shaw',
+          photo: 'https://m.media-amazon.com/images/M/MV5BMjA0OTE5OTU2MV5BMl5BanBnXkFtZTcwNTk3NTc1NA@@._V1_UY1200_CR84,0,630,1200_AL_.jpg'
+        }, {
+          name: 'Kim Bodnia',
+          photo: 'https://m.media-amazon.com/images/M/MV5BMjA1NzYzNzYwMl5BMl5BanBnXkFtZTgwOTY3NjI3NTM@._V1_UY1200_CR584,0,630,1200_AL_.jpg'
+        }, {
+          name: 'Owen McDonnell',
+          photo: 'https://m.media-amazon.com/images/M/MV5BOThkM2VkNzgtYjMwYi00ZmY0LTkzMTMtMWVlN2NmOWQxNGU0XkEyXkFqcGdeQXVyNDU2NjExMjg@._V1_UY1200_CR165,0,630,1200_AL_.jpg'
+        }],
+        whereWatch: 'HBO',
+      },
+      {
+        id: 6,
+        title: 'Snowdrop',
+        year: '2021 -',
+        time: '1h 10m',
+        seasons: 1,
+        poster: 'https://m.media-amazon.com/images/M/MV5BZWJhZWVjYjgtZWVhNy00ZWZlLWFlODMtMDFhYzUyMmJkY2ZjXkEyXkFqcGdeQXVyNjgyMTI1MDE@._V1_FMjpg_UX1000_.jpg',
+        trailer: 'https://www.youtube.com/embed/2xcdOQUOEZE',
+        imdbScore: '8.8',
+        genre: ['Drama', 'Romance'],
+        sipnose: 'Adapted from the handwritten notes of a man who escaped from a political prison camp in North Korea, Snowdrop is set against the backdrop of the 1987 Democracy Movement in South Korea.',
+        director: 'Hyun Tak Jo',
+        actors: [{
+          name: 'Jung Hae-In',
+          photo: 'https://m.media-amazon.com/images/M/MV5BNDkyOWNkZDEtYmQ4NC00Njc0LTlhMzMtNDliMTU2ZGU0YjA4XkEyXkFqcGdeQXVyNzI1NzMxNzM@._V1_.jpg'
+        }, {
+          name: 'Jisoo Kim',
+          photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Kim_Ji-soo_at_the_Dior_Pop-Up_Store_Opening_Event_on_August_19%2C_2019_%285%29.png/220px-Kim_Ji-soo_at_the_Dior_Pop-Up_Store_Opening_Event_on_August_19%2C_2019_%285%29.png'
+        }, {
+          name: 'Yoo In-Na',
+          photo: 'https://m.media-amazon.com/images/M/MV5BZjI3ZmQ1YzktYzNjMi00NmZjLWI0ZGQtZDFiOGI1YjYxYTQ2XkEyXkFqcGdeQXVyMjMxNTAxNDk@._V1_UY1200_CR196,0,630,1200_AL_.jpg'
+        }, {
+          name: 'Yun Se-ah',
+          photo: 'https://m.media-amazon.com/images/M/MV5BMWQwNmQzMzEtZDZhNC00YmRmLWEyOWEtMjNmMmNiYzQwOTdlXkEyXkFqcGdeQXVyNDY5MjMyNTg@._V1_.jpg'
+        }, {
+          name: 'Kim Jung-nan',
+          photo: 'https://m.media-amazon.com/images/M/MV5BNGQyYjYwZTQtZmE5OS00NWI3LWFkZTMtMDZhMjVmNmI3Y2I5XkEyXkFqcGdeQXVyNTI5NjIyMw@@._V1_UY1200_CR85,0,630,1200_AL_.jpg'
+        }],
+        whereWatch: 'Disney+',
       },
     ],
     countries: localStorage.countries ? JSON.parse(localStorage.countries) : [
