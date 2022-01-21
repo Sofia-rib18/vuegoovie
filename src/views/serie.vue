@@ -44,7 +44,17 @@
             <h3>Director:</h3>
           </b-col>
           <b-col
-            ><p>{{ serie.director }}</p></b-col
+            ><p v-for="(director, index) in serie.director" :key="index">
+              <b-link
+                @click="
+                  $router.push({
+                    name: 'director',
+                    params: { directorId: director.id },
+                  })
+                "
+                >{{ director.name }}</b-link
+              >
+            </p></b-col
           >
         </b-row>
       </b-container>
@@ -92,7 +102,7 @@
                   $router.push({ name: 'actor', params: { actorId: actor.id } })
                 "
               >
-                <router-link to="/filmes">Vie More</router-link></b-button
+                View more</b-button
               >
             </b-card>
           </b-card-group>

@@ -43,7 +43,17 @@
             <h3>Director:</h3>
           </b-col>
           <b-col
-            ><p>{{ film.director }}</p></b-col
+            ><p v-for="(director, index) in film.director" :key="index">
+              <b-link
+                @click="
+                  $router.push({
+                    name: 'director',
+                    params: { directorId: director.id },
+                  })
+                "
+                >{{ director.name }}</b-link
+              >
+            </p></b-col
           >
         </b-row>
       </b-container>
@@ -80,7 +90,14 @@
                 :src="actor.photo"
               ></b-card-img>
               <b-card-title>{{ actor.name }}</b-card-title>
-              <b-button href="#" variant="primary">View more</b-button>
+              <b-button
+                href="#"
+                variant="primary"
+                @click="
+                  $router.push({ name: 'actor', params: { actorId: actor.id } })
+                "
+                >View more</b-button
+              >
             </b-card>
           </b-card-group>
         </b-row>
