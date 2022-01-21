@@ -1,43 +1,50 @@
 <template>
-  <div>
+  <div id="app1">
     <div>
       <b-container>
         <b-row>
           <b-col>
             <b-img
               left
-              style="max-height: 200px; margin-top: 50px; margin-left: 100px"
+              style="max-height: 200px"
               :src="director.photo"
               alt="Left image"
             ></b-img>
           </b-col>
           <b-col>
             <h1>{{ director.name }}</h1>
-            <p>Director</p>
+            <p style="color: #fff8f7">Director</p>
           </b-col>
           <b-col>
-            <b-icon icon="heart" font-scale="2"></b-icon>
+            <b-icon
+              icon="heart"
+              font-scale="2"
+              style="color: #baa5a3; margin-left: 5px"
+            ></b-icon>
           </b-col>
         </b-row>
       </b-container>
       <h1>Known for</h1>
-      <b-container>
+      <b-container id="container3">
         <b-row>
           <b-card-group
             deck
+            style="margin-top: 5px"
             v-for="(film, index) in director.films"
             :key="index"
           >
-            <b-card tag="article" style="max-width: 20rem" class="mb-12"
-              ><b-card-img
-                style="max-height: 200px"
-                :src="film.poster"
-              ></b-card-img>
-              <b-card-title>{{ film.title }}</b-card-title>
+            <b-card
+              tag="article"
+              style="max-width: 20rem; background-color: transparent"
+              class="mb-12"
+              ><b-card-img :src="film.poster"></b-card-img>
+              <b-card-title style="color: #fff8f7">{{
+                film.title
+              }}</b-card-title>
               <div v-if="film.id <= 6">
                 <b-button
                   href="#"
-                  variant="primary"
+                  id="button1"
                   @click="
                     $router.push({
                       name: 'filme',
@@ -50,7 +57,7 @@
               <div v-else>
                 <b-button
                   href="#"
-                  variant="primary"
+                  id="button1"
                   @click="
                     $router.push({
                       name: 'serie',
