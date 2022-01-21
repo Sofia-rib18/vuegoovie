@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app1">
     <div v-if="film">
       <div>
         <iframe
@@ -12,39 +12,48 @@
           allowfullscreen
         ></iframe>
       </div>
-      <b-container>
+      <b-container id="container1">
         <b-row>
           <b-col>
             <b-img
               left
-              style="max-height: 200px; margin-top: 50px; margin-left: 100px"
+              style="max-height: 200px"
               :src="film.poster"
               alt="Left image"
             ></b-img>
           </b-col>
           <b-col>
             <h1>{{ film.title }}</h1>
-            <p>{{ film.genre.join(" | ") }}</p>
+            <p style="color: #fff8f7">{{ film.genre.join(" | ") }}</p>
           </b-col>
           <b-col>
-            <b-icon icon="star" font-scale="2"></b-icon>
-            <b-icon icon="heart" font-scale="2"></b-icon>
-            <b-icon icon="check-circle" font-scale="2"></b-icon>
+            <b-icon icon="star" font-scale="2" style="color: #baa5a3"></b-icon>
+            <b-icon icon="heart" font-scale="2" style="color: #baa5a3"></b-icon>
+            <b-icon
+              icon="check-circle"
+              font-scale="2"
+              style="color: #baa5a3"
+            ></b-icon>
           </b-col>
         </b-row>
         <b-row>
           <b-col>
-            <p>
+            <p style="color: #fff8f7">
               {{ film.year }} | {{ film.time }} | IMDB: {{ film.imdbScore
-              }}<b-icon icon="star-fill" font-scale="1"></b-icon>
+              }}<b-icon
+                icon="star-fill"
+                font-scale="1"
+                style="color: #fcd40d"
+              ></b-icon>
             </p>
           </b-col>
           <b-col>
-            <h3>Director:</h3>
+            <h3 id="directorh3">Director:</h3>
           </b-col>
           <b-col
             ><p v-for="(director, index) in film.director" :key="index">
               <b-link
+                style="color: #fff8f7"
                 @click="
                   $router.push({
                     name: 'director',
@@ -57,42 +66,60 @@
           >
         </b-row>
       </b-container>
-      <b-container>
+      <b-container id="container2">
         <b-row>
           <b-col>
-            <h1>Sipnose</h1>
+            <h1 style="margin-left: -220px">Sipnose</h1>
           </b-col>
           <b-col></b-col>
           <b-col></b-col>
         </b-row>
         <b-row>
           <b-col
-            ><p>
+            ><p id="sipnose">
               {{ film.sipnose }}
             </p></b-col
           >
-          <b-col></b-col>
+          <b-col>
+            <b-table
+              striped
+              hover
+              :items="items"
+              :fields="fields"
+              style="width: 200px; color: #fff8f7; margin-left: 300px"
+            ></b-table>
+          </b-col>
         </b-row>
       </b-container>
-      <b-container>
+      <b-container id="container3">
         <b-row>
           <b-col>
-            <h1>Cast</h1>
+            <h1 style="margin-left: -300px">Cast</h1>
           </b-col>
           <b-col></b-col>
           <b-col></b-col>
         </b-row>
         <b-row>
-          <b-card-group deck v-for="(actor, index) in film.actors" :key="index">
-            <b-card tag="article" style="max-width: 20rem" class="mb-12"
+          <b-card-group
+            deck
+            style="margin-top: 5px"
+            v-for="(actor, index) in film.actors"
+            :key="index"
+          >
+            <b-card
+              tag="article"
+              style="max-width: 14rem; background-color: transparent"
+              class="mb-12"
               ><b-card-img
                 style="max-height: 200px"
                 :src="actor.photo"
               ></b-card-img>
-              <b-card-title>{{ actor.name }}</b-card-title>
+              <b-card-title style="color: #fff8f7">{{
+                actor.name
+              }}</b-card-title>
               <b-button
                 href="#"
-                variant="primary"
+                id="button1"
                 @click="
                   $router.push({ name: 'actor', params: { actorId: actor.id } })
                 "
@@ -102,20 +129,20 @@
           </b-card-group>
         </b-row>
       </b-container>
-      <b-container>
+      <b-container id="container3">
         <b-row>
           <h1>Reviews</h1>
         </b-row>
-        <b-form inline>
-          <b-col>
-            <b-form-input
-              placeholder="Write your opinion about the movie here... "
-              type="text"
-            ></b-form-input>
-          </b-col>
-          <b-col>
-            <b-button variant="primary">Publish</b-button>
-          </b-col>
+        <b-form inline style="margin-top: 5px">
+          <b-form-textarea
+            id="input-5"
+            type="text"
+            required
+            placeholder="Write your opinion about the movie here..."
+          ></b-form-textarea>
+          <b-button type="submit" id="buttonGame" style="margin-left: 200px"
+            >Publish</b-button
+          >
         </b-form>
       </b-container>
     </div>
@@ -130,6 +157,8 @@ export default {
   data() {
     return {
       film: [],
+      fields: ["Where_to_watch"],
+      items: [],
     };
   },
   created() {
@@ -141,6 +170,7 @@ export default {
   methods: {
     filme() {
       this.film = this.getFilm(this.$route.params.filmeId);
+      this.items = this.film.whereWatch;
       console.log(this.$route.params.filmeId);
       console.log(this.film);
     },

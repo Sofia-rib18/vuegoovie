@@ -12,7 +12,7 @@
       </div>
       <b-form @submit.prevent="gessMovie">
         <b-form-input
-          id="input-3"
+          id="input-5"
           type="text"
           v-model="answer"
           required
@@ -59,7 +59,7 @@
         >Play again</b-button
       >
       <b-button href="#" id="buttonGame2" style="margin-top: 50px"
-        ><router-link :to="{ name: 'quizzes' }">
+        ><router-link style="color: #fef8f8" :to="{ name: 'quizzes' }">
           New game</router-link
         ></b-button
       >
@@ -84,7 +84,7 @@
           id="button1"
           @click="start"
           v-on:click="picker"
-          style="margin-top: 30px; width: 150px"
+          style="margin-top: 30px; width: 150px-; color: #fff8f7"
           >Play</b-button
         >
       </b-col>
@@ -200,6 +200,7 @@ export default {
   margin-top: 30px;
   width: 600px;
   background-color: transparent;
+  border-color: #de2221;
   color: #fef8f8;
 }
 #buttonGame {

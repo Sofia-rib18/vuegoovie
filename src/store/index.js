@@ -70,7 +70,7 @@ export default new Vuex.Store({
           name: 'Ana de Armas',
           photo: 'https://m.media-amazon.com/images/M/MV5BMWM3MDMzNjMtODM5Ny00YmY0LWJhNzQtNTE1ZDNlNjllNDQ0XkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_UY1200_CR585,0,630,1200_AL_.jpg'
         },],
-        whereWatch: 'Amazon',
+        whereWatch: [{ Where_to_watch: 'Amazon' }],
       },
       {
         id: 2,
@@ -107,7 +107,7 @@ export default new Vuex.Store({
           name: 'Michael Shannon',
           photo: 'https://m.media-amazon.com/images/M/MV5BMjE0NzM5MTc5OF5BMl5BanBnXkFtZTgwMjc3ODYxODE@._V1_.jpg',
         },],
-        whereWatch: 'Amazon',
+        whereWatch: [{ Where_to_watch: 'Amazon' }],
       },
       {
         id: 3,
@@ -144,7 +144,7 @@ export default new Vuex.Store({
           name: 'Martin Kove',
           photo: 'https://upload.wikimedia.org/wikipedia/commons/5/5d/Martin_Kove_%2844524134200%29.jpg',
         },],
-        whereWatch: 'Netflix',
+        whereWatch: [{ Where_to_watch: 'Netflix' }],
       },
       {
         id: 4,
@@ -184,7 +184,7 @@ export default new Vuex.Store({
           name: 'Joe Pantoliano',
           photo: 'https://m.media-amazon.com/images/M/MV5BODBlYWY1MWUtZDdmYS00Y2VkLThmNDEtNGE4ZDAzNjk5NmI1XkEyXkFqcGdeQXVyNjUxMjc1OTM@._V1_UY1200_CR170,0,630,1200_AL_.jpg',
         },],
-        whereWatch: 'HBO',
+        whereWatch: [{ Where_to_watch: 'HBO' }],
       },
       {
         id: 5,
@@ -224,7 +224,7 @@ export default new Vuex.Store({
           name: 'Jessica Darrow',
           photo: 'https://m.media-amazon.com/images/M/MV5BZDBkOWZjNTMtNTE0OC00ODI1LThkNDEtNzI5Nzg3OTlkMTMxXkEyXkFqcGdeQXVyNzE4Njc3NjQ@._V1_UY1200_CR165,0,630,1200_AL_.jpg',
         },],
-        whereWatch: 'Disney+',
+        whereWatch: [{ Where_to_watch: 'Disney+' }],
       },
       {
         id: 6,
@@ -261,7 +261,7 @@ export default new Vuex.Store({
           name: 'Rick Springfield',
           photo: 'https://m.media-amazon.com/images/M/MV5BMjAzMzkxMzAwOF5BMl5BanBnXkFtZTcwMDk1MzMxMw@@._V1_.jpg',
         },],
-        whereWatch: 'Amazon',
+        whereWatch: [{ Where_to_watch: 'Amazon' }],
       },
     ],
     series: localStorage.series ? JSON.parse(localStorage.series) : [
@@ -308,7 +308,7 @@ export default new Vuex.Store({
           name: 'David Schwimmer',
           photo: 'https://m.media-amazon.com/images/M/MV5BMTQ2Mjg5ODIzNF5BMl5BanBnXkFtZTgwNjIwMjI0ODE@._V1_.jpg'
         }],
-        whereWatch: 'HBO',
+        whereWatch: [{ Where_to_watch: 'HBO' }],
       },
       {
         id: 8,
@@ -346,7 +346,7 @@ export default new Vuex.Store({
           name: 'Kim Hieora',
           photo: 'https://asianwiki.com/images/0/03/Kim_Hieora-1989-p1.jpg'
         },],
-        whereWatch: 'iQIYI',
+        whereWatch: [{ Where_to_watch: 'iQIYI' }],
       },
       {
         id: 9,
@@ -384,7 +384,7 @@ export default new Vuex.Store({
           name: 'Jacob Elordi',
           photo: 'https://i.pinimg.com/originals/ed/03/d6/ed03d6c2b7225c2d8be27fabb06a7b8d.jpg'
         }],
-        whereWatch: 'HBO',
+        whereWatch: [{ Where_to_watch: 'HBO' }],
       },
       {
         id: 10,
@@ -422,7 +422,7 @@ export default new Vuex.Store({
           name: 'Ned Dennehy',
           photo: 'https://m.media-amazon.com/images/M/MV5BYzYyNjY3MTUtZWQ4MC00MjQ4LTliNTItMDMwNDczYjQyZDIzXkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg'
         }],
-        whereWatch: 'Netflix',
+        whereWatch: [{ Where_to_watch: 'Netflix' }],
       },
       {
         id: 11,
@@ -460,7 +460,7 @@ export default new Vuex.Store({
           name: 'Owen McDonnell',
           photo: 'https://m.media-amazon.com/images/M/MV5BOThkM2VkNzgtYjMwYi00ZmY0LTkzMTMtMWVlN2NmOWQxNGU0XkEyXkFqcGdeQXVyNDU2NjExMjg@._V1_UY1200_CR165,0,630,1200_AL_.jpg'
         }],
-        whereWatch: 'HBO',
+        whereWatch: [{ Where_to_watch: 'HBO' }],
       },
       {
         id: 12,
@@ -498,7 +498,7 @@ export default new Vuex.Store({
           name: 'Kim Jung-nan',
           photo: 'https://m.media-amazon.com/images/M/MV5BNGQyYjYwZTQtZmE5OS00NWI3LWFkZTMtMDZhMjVmNmI3Y2I5XkEyXkFqcGdeQXVyNTI5NjIyMw@@._V1_UY1200_CR85,0,630,1200_AL_.jpg'
         }],
-        whereWatch: 'Disney+',
+        whereWatch: [{ Where_to_watch: 'Disney+' }],
       },
     ],
     actors: localStorage.actors ? JSON.parse(localStorage.actors) : [

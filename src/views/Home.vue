@@ -75,6 +75,7 @@
               <b-button href="#" id="button1"
                 ><router-link
                   :to="{ name: 'quizz', params: { quizzId: 'quizz' } }"
+                  style="color: #fef8f8"
                 >
                   Play</router-link
                 ></b-button
@@ -93,6 +94,7 @@
               <b-button href="#" id="button1"
                 ><router-link
                   :to="{ name: 'quizz2', params: { quizzId: 'quizz2' } }"
+                  style="color: #fef8f8"
                 >
                   Play</router-link
                 ></b-button
@@ -111,6 +113,7 @@
               <b-button href="#" id="button1"
                 ><router-link
                   :to="{ name: 'quizz3', params: { quizzId: 'quizz3' } }"
+                  style="color: #fef8f8"
                 >
                   Play</router-link
                 ></b-button
@@ -135,9 +138,14 @@
           :key="index"
           id="grup2"
         >
-          <b-card tag="article" style="max-width: 20rem" class="mb-12"
+          <b-card
+            tag="article"
+            style="max-width: 20rem; background-color: transparent"
+            class="mb-12"
             ><b-card-img :src="movie.poster"></b-card-img>
-            <b-card-title>{{ movie.title }}</b-card-title>
+            <b-card-title style="color: #fff8f7">{{
+              movie.title
+            }}</b-card-title>
             <b-button
               href="#"
               id="button1"
@@ -165,9 +173,14 @@
           :key="index"
           id="grup3"
         >
-          <b-card tag="article" style="max-width: 20rem" class="mb-12"
+          <b-card
+            tag="article"
+            style="max-width: 20rem; background-color: transparent"
+            class="mb-12"
             ><b-card-img :src="serie.poster"></b-card-img>
-            <b-card-title>{{ serie.title }}</b-card-title>
+            <b-card-title style="color: #fff8f7">{{
+              serie.title
+            }}</b-card-title>
             <b-button
               href="#"
               id="button1"
@@ -188,14 +201,16 @@
             width="600"
             left
             thumbnail
-            src="https://nerdiano.com.br/wp-content/uploads/2019/07/john-wick-tv-series-chapter-3-feature-img-geekexchange-061517.jpg"
+            src="https://www.indiewire.com/wp-content/uploads/2021/11/best-film-2.jpg?w=780"
             alt="Image 1"
           ></b-img>
         </b-col>
         <b-col>
-          <h1>Quizz Action</h1>
+          <h1>Guess the movies and shows</h1>
           <b-button href="#" id="button1"
-            ><router-link :to="{ name: 'quizz' }"> Play</router-link></b-button
+            ><router-link :to="{ name: 'game' }" style="color: #fef8f8">
+              Play</router-link
+            ></b-button
           >
         </b-col>
       </b-row>

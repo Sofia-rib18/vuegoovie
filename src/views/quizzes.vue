@@ -35,8 +35,10 @@
             style="max-width: 20rem"
             class="mb-6"
           >
-            <b-button href="#"
-              ><router-link :to="{ name: 'game' }"> Play</router-link></b-button
+            <b-button href="#" id="button1"
+              ><router-link :to="{ name: 'game' }" style="color: #fef8f8">
+                Play</router-link
+              ></b-button
             >
           </b-card>
           <b-card
@@ -51,6 +53,7 @@
           >
             <b-button href="#" id="button1"
               ><router-link
+                style="color: #fef8f8"
                 :to="{ name: 'quizz', params: { quizzId: 'quizz' } }"
               >
                 Play</router-link
@@ -69,6 +72,7 @@
           >
             <b-button href="#" id="button1">
               <router-link
+                style="color: #fef8f8"
                 :to="{ name: 'quizz2', params: { quizzId: 'quizz2' } }"
               >
                 Play</router-link
@@ -87,6 +91,7 @@
           >
             <b-button href="#" id="button1"
               ><router-link
+                style="color: #fef8f8"
                 :to="{ name: 'quizz3', params: { quizzId: 'quizz3' } }"
               >
                 Play</router-link

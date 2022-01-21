@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div id="app1">
     <b-row>
       <b-col>
-        <h1>Movies</h1>
+        <h1 style="margin-left: -200px">Movies</h1>
       </b-col>
       <b-col>
         <!-- Filtro -->
@@ -10,7 +10,7 @@
           id="dropdown-right"
           right
           text="Filter"
-          variant="primary"
+          variant="outline-danger"
           class="m-2"
         >
           <b-dropdown-item href="#">Recents</b-dropdown-item>
@@ -26,14 +26,20 @@
     <b-container fluid="sm">
       <b-row>
         <b-card-group deck v-for="(movie, index) in getMovies" :key="index">
-          <b-card tag="article" style="max-width: 20rem" class="mb-6">
+          <b-card
+            tag="article"
+            style="max-width: 20rem; background-color: transparent"
+            class="mb-6"
+          >
             <b-card-img :src="movie.poster"></b-card-img>
-            <b-card-title>{{ movie.title }}</b-card-title>
+            <b-card-title style="color: #fff8f7">{{
+              movie.title
+            }}</b-card-title>
             <b-button
               @click="
                 $router.push({ name: 'filme', params: { filmeId: movie.id } })
               "
-              variant="primary"
+              id="button1"
               >View more</b-button
             >
           </b-card>
