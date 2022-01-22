@@ -59,7 +59,7 @@
         >Play again</b-button
       >
       <b-button href="#" id="buttonGame2" style="margin-top: 50px"
-        ><router-link :to="{ name: 'quizzes' }">
+        ><router-link style="color: #fef8f8" :to="{ name: 'quizzes' }">
           New game</router-link
         ></b-button
       >
