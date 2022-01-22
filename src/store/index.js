@@ -1493,9 +1493,72 @@ export default new Vuex.Store({
         name: "Police Academy",
       },
     ],
+    quizz: localStorage.quizz ? JSON.parse(localStorage.quizz) : [
+      {
+        id: 1,
+        sipnose: "As Steve Rogers struggles to embrace his role in the modern world, he teams up with a fellow Avenger and S.H.I.E.L.D agent, Black Widow, to battle a new threat from history: an assassin known as the Winter Soldier.",
+        name: "Captain America The Winter Soldier",
+      },
+      {
+        id: 2,
+        sipnose:
+          "James Bond has left active service. His peace is short-lived when Felix Leiter, an old friend from the CIA, turns up asking for help, leading Bond onto the trail of a mysterious villain armed with dangerous new technology.",
+        name: "007 No Time to Die",
+      },
+      {
+        id: 3,
+        sipnose:
+          "A martial arts master agrees to teach karate to a bullied teenager.",
+        name: "The Karate Kid",
+      },
+      {
+        id: 4,
+        sipnose:
+          "When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth the life he knows is the elaborate deception of an evil cyber-intelligence.",
+        name: "Matrix",
+      },
+      {
+        id: 5,
+        sipnose:
+          "A heroic drama that follows capable but bad cop Ryoo Soo-yeol regaining his humanity after meeting the righteous but crazy 'K'.",
+        name: "Bad and Crazy",
+      },
+      {
+        id: 6,
+        sipnose:
+          "After a series of events, the lives of a security operative and an assassin become inextricably linked.",
+        name: "Killing Eve",
+      },
+      {
+        id: 7,
+        sipnose:
+          "An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi Plaza in Los Angeles.",
+        name: "Die Hard",
+      },
+      {
+        id: 8,
+        sipnose:
+          "Dom and the crew must take on an international terrorist who turns out to be Dom and Mia's estranged brother.",
+        name: "Fast and Furious 9",
+      },
+      {
+        id: 9,
+        sipnose:
+          "Katniss Everdeen voluntarily takes her younger sister's place in the Hunger Games: a televised competition in which two teenagers from each of the twelve Districts of Panem are chosen at random to fight to the death.",
+        name: "Hunger Games",
+      },
+      {
+        id: 10,
+        sipnose:
+          "An ex-hit-man comes out of retirement to track down the gangsters that killed his dog and took everything from him.",
+        name: "John Wick",
+      },
+    ],
     currentQuestion: 0,
     points: 0,
+    pointsQuizz: 0,
     questions: [],
+    questionsQuizz: []
 
   },
   getters: {
@@ -1509,12 +1572,18 @@ export default new Vuex.Store({
     getSeries: (state) => state.series,
     getCountries: (state) => state.countries,
     getUsers: (state) => state.users,
+    // Para jogos
     getPoints: (state) => state.points,
+    getPointsQuizz: (state) => state.pointsQuizz,
     getGame: (state) => state.game,
+    getQuizz: (state) => state.quizz,
     getCurrentQuestion: (state) => state.currentQuestion,
     isMovie: (state) => (answer) => state.questions.some(
       (question) => question.name === answer),
+    isFilm: (state) => (answer) => state.questionsQuizz.some(
+      (question) => question.name === answer),
     getQuestions: (state) => state.questions,
+    getQuestionsQuizz: (state) => state.questionsQuizz,
     getFilm: (state) => (id) => state.films.find((film) => film.id == id),
     getShow: (state) => (id) => state.series.find((serie) => serie.id == id),
     getActor: (state) => (id) => state.actors.find((actor) => actor.id == id),
@@ -1540,9 +1609,17 @@ export default new Vuex.Store({
       state.points += payload;
       localStorage.points = JSON.stringify(state.points)
     },
+    SET_POINTS_QUIZZ(state, payload) {
+      state.pointsQuizz += payload;
+      localStorage.pointsQuizz = JSON.stringify(state.pointsQuizz)
+    },
     SET_QUESTION(state, payload) {
       state.questions.push(payload);
       localStorage.questions = JSON.stringify(state.questions);
+    },
+    SET_QUESTION_QUIZZ(state, payload) {
+      state.questionsQuizz.push(payload);
+      localStorage.questionsQuizz = JSON.stringify(state.questionsQuizz);
     },
     SET_GAME(state, payload) {
       state.game.push(payload);
@@ -1553,6 +1630,16 @@ export default new Vuex.Store({
       localStorage.currentQuestion = JSON.stringify(state.currentQuestion);
       state.questions = [];
       localStorage.questions = JSON.stringify(state.questions);
+    },
+    SET_QUIZZ(state, payload) {
+      state.quizz.push(payload);
+      localStorage.quizz = JSON.stringify(state.quizz);
+      state.pointsQuizz = 0;
+      localStorage.pointsQuizz = JSON.stringify(state.pointsQuizz);
+      state.currentQuestion = 0;
+      localStorage.currentQuestion = JSON.stringify(state.currentQuestion);
+      state.questionsQuizz = [];
+      localStorage.questionsQuizz = JSON.stringify(state.questionsQuizz);
     }
   },
   actions: {

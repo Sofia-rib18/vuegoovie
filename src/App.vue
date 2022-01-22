@@ -43,27 +43,48 @@
     </div>
     <router-view />
     <footer>
-        <b-container class="bv-example-row">
-            <b-row>
-                <b-col>
-                    <p>Movies</p>
-                    <p>Series</p>
-                    <p>Actors</p>
-                    <p>Director</p>
-                </b-col>
-                <b-col>
-                    <p>Classifications</p>
-                    <p>Quizzes</p>
-                </b-col>
-                <b-col>
-                    <p>Search</p>
-                    <p>Profile</p>
-                </b-col>
-            </b-row>
-        </b-container>
-        <router-link to="/">
-            <img alt="Goovie logo" src="@/assets/goovie2.png" width="107px" height="55px"/>
-        </router-link>
+      <b-container class="bv-example-row">
+        <b-row>
+          <b-col>
+            <p>
+              <router-link to="/filmes" style="color: #070707"
+                >Movies</router-link
+              >
+            </p>
+            <p>
+              <router-link to="/series" style="color: #070707"
+                >Series</router-link
+              >
+            </p>
+            <p>Actors</p>
+            <p>Director</p>
+          </b-col>
+          <b-col>
+            <p>
+              <router-link to="/classifications" style="color: #070707"
+                >Classifications</router-link
+              >
+            </p>
+            <p>
+              <router-link to="/quizzes" style="color: #070707"
+                >Quizzes</router-link
+              >
+            </p>
+          </b-col>
+          <b-col>
+            <p>Search</p>
+            <p>Profile</p>
+          </b-col>
+        </b-row>
+      </b-container>
+      <router-link to="/">
+        <img
+          alt="Goovie logo"
+          src="@/assets/goovie2.png"
+          width="107px"
+          height="55px"
+        />
+      </router-link>
     </footer>
   </div>
 </template>

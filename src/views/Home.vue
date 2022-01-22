@@ -68,9 +68,8 @@
               img-alt="Image"
               img-top
               tag="article"
-              style="max-width: 20rem"
+              style="max-width: 20rem; background-color: transparent"
               class="mb-6"
-              id="quizz"
             >
               <b-button href="#" id="button1"
                 ><router-link
@@ -87,9 +86,8 @@
               img-alt="Image"
               img-top
               tag="article"
-              style="max-width: 20rem"
+              style="max-width: 20rem; background-color: transparent"
               class="mb-6"
-              id="quizz2"
             >
               <b-button href="#" id="button1"
                 ><router-link
@@ -106,9 +104,8 @@
               img-alt="Image"
               img-top
               tag="article"
-              style="max-width: 20rem"
+              style="max-width: 20rem; background-color: transparent"
               class="mb-6"
-              id="quizz3"
             >
               <b-button href="#" id="button1"
                 ><router-link
@@ -140,7 +137,7 @@
         >
           <b-card
             tag="article"
-            style="max-width: 20rem; background-color: transparent"
+            style="max-width: 14rem; background-color: transparent"
             class="mb-12"
             ><b-card-img :src="movie.poster"></b-card-img>
             <b-card-title style="color: #fff8f7">{{
@@ -175,7 +172,7 @@
         >
           <b-card
             tag="article"
-            style="max-width: 20rem; background-color: transparent"
+            style="max-width: 14rem; background-color: transparent"
             class="mb-12"
             ><b-card-img :src="serie.poster"></b-card-img>
             <b-card-title style="color: #fff8f7">{{
@@ -201,6 +198,7 @@
             width="600"
             left
             thumbnail
+            style="background-color: transparent"
             src="https://www.indiewire.com/wp-content/uploads/2021/11/best-film-2.jpg?w=780"
             alt="Image 1"
           ></b-img>

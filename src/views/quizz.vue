@@ -1,104 +1,199 @@
 <template>
-  <div v-if="started">
-    <form @submit.prevent="submit">
-      <div>
+  <div id="app1">
+    <div v-if="started">
+      <div :key="currentQuestion">
         <h1>Quizz Action</h1>
-        <div>
-          <p>1/ 10</p>
-          <p>0<b-icon icon="controller"></b-icon></p>
-
-          <br />
-          <p>
-            Follows the personal and professional lives of six twenty to
-            thirty-something-year-old friends living in Manhattan.
-          </p>
-          <b-card-group>
-            <b-card tag="article" style="max-width: 20rem" class="mb-12"
-              ><b-card-img
-                src="https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_FMjpg_UX1000_.jpg"
-              ></b-card-img>
-              <button type="submit" value="a" id="button1">A</button>
-            </b-card>
-            <b-card tag="article" style="max-width: 20rem" class="mb-12"
-              ><b-card-img
-                src="https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_FMjpg_UX1000_.jpg"
-              ></b-card-img>
-              <button type="submit" value="b" id="button1">B</button>
-            </b-card>
-            <b-card tag="article" style="max-width: 20rem" class="mb-12"
-              ><b-card-img
-                src="https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_FMjpg_UX1000_.jpg"
-              ></b-card-img>
-              <button type="submit" value="c" id="button1">C</button>
-            </b-card>
-            <b-card tag="article" style="max-width: 20rem" class="mb-12"
-              ><b-card-img
-                src="https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_FMjpg_UX1000_.jpg"
-              ></b-card-img>
-              <button type="submit" value="d" id="button1">D</button>
-            </b-card>
-          </b-card-group>
-        </div>
+        <p style="color: #fff8f7">{{ currentQuestion }} / 10</p>
+        <p style="color: #fff8f7">
+          {{ points }}
+          <b-icon icon="controller" style="color: #fff8f7"></b-icon>
+        </p>
+        <p style="color: #fff8f7">{{ trailer.sipnose }}</p>
       </div>
-    </form>
-    <p>{{ status }}</p>
-  </div>
-  <div v-else>
-    <b-col>
-      <b-img
-        width="600"
-        left
-        thumbnail
-        src="https://nerdiano.com.br/wp-content/uploads/2019/07/john-wick-tv-series-chapter-3-feature-img-geekexchange-061517.jpg"
-        alt="Image 1"
-      ></b-img>
-    </b-col>
-    <b-col>
+      <b-form @submit.prevent="gessMovie">
+        <b-form-input
+          id="input-5"
+          type="text"
+          v-model="answer"
+          required
+          placeholder="Enter the name of the movie or show..."
+        ></b-form-input>
+        <b-button type="submit" id="buttonGame">Submit</b-button>
+        <b-button type="reset" id="buttonGame2">Reset</b-button>
+      </b-form>
+    </div>
+    <div v-else-if="result">
       <h1>Quizz Action</h1>
-      <h3>Dodge This!!!</h3>
-      <b-button href="#" id="button1" @click="start">Play</b-button>
-      <p>{{ status }}</p>
-    </b-col>
+      <b-col>
+        <b-img
+          style="margin-top: 60px; margin-left: 50px"
+          width="600"
+          left
+          src="https://nerdiano.com.br/wp-content/uploads/2019/07/john-wick-tv-series-chapter-3-feature-img-geekexchange-061517.jpg"
+          alt="Image 1"
+        ></b-img>
+      </b-col>
+      <b-col>
+        <p style="color: #fff8f7; margin-top: 100px">
+          <a style="color: #de2221; font-size: 30px">{{ rigthanwers }}</a> / 10
+        </p>
+        <h3
+          style="color: #baa5a3; margin-top: 50px; font-size: 30px"
+          v-html="text"
+        ></h3>
+        <p style="color: #fff8f7; margin-top: 50px">
+          <b-icon
+            icon="controller"
+            font-scale="1.5"
+            style="color: #fff8f7; margin-right: 10px"
+          ></b-icon>
+          <a style="color: #de2221; font-size: 30px">{{ points }}</a> / 100
+        </p>
+      </b-col>
+      <b-button
+        href="#"
+        id="buttonGame"
+        @click="start"
+        v-on:click="picker"
+        style="margin-top: 50px"
+        >Play again</b-button
+      >
+      <b-button href="#" id="buttonGame2" style="margin-top: 50px"
+        ><router-link :to="{ name: 'quizzes' }">
+          New game</router-link
+        ></b-button
+      >
+    </div>
+    <div v-else>
+      <b-col>
+        <b-img
+          id="thumbnail"
+          width="600"
+          left
+          src="https://nerdiano.com.br/wp-content/uploads/2019/07/john-wick-tv-series-chapter-3-feature-img-geekexchange-061517.jpg"
+          alt="Image 1"
+        ></b-img>
+      </b-col>
+      <b-col>
+        <h1>Quizz Action</h1>
+        <h3 id="directorh3">Dogde This!</h3>
+        <b-button
+          href="#"
+          id="button1"
+          @click="start"
+          v-on:click="picker"
+          style="margin-top: 30px; width: 150px"
+          >Play</b-button
+        >
+      </b-col>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 export default {
-  name: "App",
   data() {
     return {
-      rightAnswer: undefined,
-      answer: 0,
-      status: "",
       started: false,
+      result: false,
+      answer: "",
+      trailer: "",
+      game: [],
+      currentQuestion: "",
+      points: 0,
+      rigthanwers: 0,
+      text: "",
+      questions: [],
     };
   },
+  created() {
+    if (!localStorage.getItem("quizz")) {
+      localStorage.setItem("quizz", JSON.stringify(this.game));
+    } else {
+      this.game = JSON.parse(localStorage.getItem("quizz"));
+    }
+
+    if (!localStorage.getItem("pointsQuizz")) {
+      localStorage.setItem("pointsQuizz", JSON.stringify(this.points));
+    }
+
+    if (!localStorage.getItem("questionsQuizz")) {
+      localStorage.setItem("questionsQuizz", JSON.stringify(this.questions));
+    }
+  },
   computed: {
-    formValid() {
-      return +this.answer >= 0;
-    },
-    ...mapGetters(["getMovies", "getSeries"]),
+    ...mapGetters([
+      "getCurrentQuestion",
+      "isFilm",
+      "getPointsQuizz",
+      "getQuizz",
+      "getQuestionsQuizz",
+    ]),
   },
   methods: {
+    ...mapMutations([
+      "SET_POINTS_QUIZZ",
+      "SET_QUESTION_QUIZZ",
+      "SET_MOVIE",
+      "SET_QUIZZ",
+    ]),
     start() {
-      this.rightAnswer = Math.ceil(Math.random() * 10);
-      console.log(this.rightAnswer);
       this.started = true;
+      this.currentQuestion = this.getCurrentQuestion;
+      this.game = this.getQuizz;
+      this.points = this.getPointsQuizz;
+      this.questions = this.getQuestionsQuizz;
     },
-    submit() {
-      if (!this.formValid) {
-        return;
+    picker() {
+      if (this.currentQuestion < 11) {
+        let chosenmovie = Math.floor(Math.random() * this.game.length);
+        console.log((this.trailer = this.game[chosenmovie]));
+        this.removeMovie(this.trailer);
       }
-      const { answer, rightAnswer } = this;
-      if (answer === rightAnswer) {
-        this.status = "you got it";
+      this.currentQuestion += 1;
+
+      this.points = this.getPointsQuizz;
+      if (this.currentQuestion == 11) {
+        this.result = true;
         this.started = false;
-      } else if (answer < rightAnswer) {
-        this.status = "too low";
-      } else {
-        this.status = "too high";
+        this.resultsInfo();
       }
+      this.SET_QUESTION_QUIZZ({
+        id: this.trailer.id,
+        sipnose: this.trailer.sipnose,
+        name: this.trailer.name.toLocaleLowerCase(),
+      });
+    },
+    removeMovie(mov) {
+      const filtersList = this.game.filter((movie) => movie !== mov);
+      this.game = filtersList;
+      localStorage.setItem("game", JSON.stringify(this.game));
+    },
+    gessMovie() {
+      if (this.isFilm(this.answer.toLocaleLowerCase())) {
+        this.SET_POINTS_QUIZZ(10);
+        this.rigthanwers += 1;
+        console.log(this.rigthanwers);
+      } else {
+        this.SET_POINTS_QUIZZ(0);
+      }
+      this.picker();
+    },
+    resultsInfo() {
+      if (this.rigthanwerss <= 30) {
+        this.text = "Oh My God! <br>Are You Not Entertained?";
+      } else if (this.rigthanwers > 30 && this.rigthanwers <= 60) {
+        this.text =
+          "What happen?  <br>Go watch some movies and then try again!";
+      } else if (this.rigthanwers > 60 && this.rigthanwers <= 90) {
+        this.text =
+          "Very good! <br>Have another go and you'll be getting full marks!";
+      } else if (this.rigthanwers === 100) {
+        this.text =
+          "TOP MARKS! Nice work! <br>You're really a movie buff, good for you!";
+      }
+      this.SET_QUIZZ(this.questions);
     },
   },
 };

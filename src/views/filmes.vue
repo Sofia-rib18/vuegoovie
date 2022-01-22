@@ -25,7 +25,12 @@
     <!-- Filmes -->
     <b-container fluid="sm">
       <b-row>
-        <b-card-group deck v-for="(movie, index) in getMovies" :key="index">
+        <b-card-group
+          deck
+          style="margin-top: 30px"
+          v-for="(movie, index) in getMovies"
+          :key="index"
+        >
           <b-card
             tag="article"
             style="max-width: 20rem; background-color: transparent"

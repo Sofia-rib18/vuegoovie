@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app1">
     <b-row>
       <b-col>
         <h1>Quizzes</h1>
@@ -10,7 +10,7 @@
           id="dropdown-right"
           right
           text="Filter"
-          variant="primary"
+          variant="outline-danger"
           class="m-2"
         >
           <b-dropdown-item href="#">Recents</b-dropdown-item>
@@ -25,14 +25,18 @@
 
     <b-container fluid="sm">
       <b-row>
-        <b-card-group deck>
+        <b-card-group deck style="margin-top: 30px">
           <b-card
             title="Guess the movies and shows"
             img-src="https://www.indiewire.com/wp-content/uploads/2021/11/best-film-2.jpg?w=780"
             img-alt="Image"
             img-top
             tag="article"
-            style="max-width: 20rem"
+            style="
+              max-width: 20rem;
+              background-color: transparent;
+              color: #fff8f7;
+            "
             class="mb-6"
           >
             <b-button href="#" id="button1"
@@ -47,9 +51,12 @@
             img-alt="Image"
             img-top
             tag="article"
-            style="max-width: 20rem"
+            style="
+              max-width: 20rem;
+              background-color: transparent;
+              color: #fff8f7;
+            "
             class="mb-6"
-            id="quizz"
           >
             <b-button href="#" id="button1"
               ><router-link
@@ -66,9 +73,12 @@
             img-alt="Image"
             img-top
             tag="article"
-            style="max-width: 20rem"
+            style="
+              max-width: 20rem;
+              background-color: transparent;
+              color: #fff8f7;
+            "
             class="mb-6"
-            id="quizz2"
           >
             <b-button href="#" id="button1">
               <router-link
@@ -85,9 +95,12 @@
             img-alt="Image"
             img-top
             tag="article"
-            style="max-width: 20rem"
+            style="
+              max-width: 20rem;
+              background-color: transparent;
+              color: #fff8f7;
+            "
             class="mb-6"
-            id="quizz3"
           >
             <b-button href="#" id="button1"
               ><router-link
