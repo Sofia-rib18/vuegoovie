@@ -17,9 +17,10 @@
           </b-col>
           <b-col>
             <b-icon
+              class="heart"
               icon="heart"
               font-scale="2"
-              style="color: #baa5a3; margin-left: 5px"
+              style="margin-left: 5px"
             ></b-icon>
           </b-col>
         </b-row>

@@ -29,16 +29,18 @@
             </p>
           </b-col>
           <b-col>
-            <b-icon icon="star" font-scale="2" style="color: #baa5a3"></b-icon>
+            <b-icon icon="star" font-scale="2" class="star"></b-icon>
             <b-icon
               icon="heart"
               font-scale="2"
-              style="color: #baa5a3; margin-left: 5px"
+              style="margin-left: 5px"
+              class="heart"
             ></b-icon>
             <b-icon
+              class="check"
               icon="check-circle"
               font-scale="2"
-              style="color: #baa5a3; margin-left: 5px"
+              style="margin-left: 5px"
             ></b-icon>
           </b-col>
         </b-row>
