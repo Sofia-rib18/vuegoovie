@@ -30,20 +30,18 @@
           </b-col>
           <b-col>
             <div>
+              <b-icon icon="star" font-scale="2" class="star"></b-icon>
               <b-icon
-                icon="star"
-                font-scale="2"
-                style="color: #baa5a3"
-              ></b-icon>
-              <b-icon
+                class="heart"
                 icon="heart"
                 font-scale="2"
-                style="color: #baa5a3; margin-left: 5px"
+                style="margin-left: 5px"
               ></b-icon>
               <b-icon
+                class="check"
                 icon="check-circle"
                 font-scale="2"
-                style="color: #baa5a3; margin-left: 5px"
+                style="margin-left: 5px"
               ></b-icon>
             </div>
           </b-col>
@@ -368,5 +366,23 @@ export default {
 #buttonModal:hover {
   background-color: #de2221;
   color: #fef8f8;
+}
+.heart {
+  color: #baa5a3;
+}
+.heart:hover {
+  color: #ff2626;
+}
+.star {
+  color: #baa5a3;
+}
+.check {
+  color: #baa5a3;
+}
+.star:hover {
+  color: #fcd40d;
+}
+.check:hover {
+  color: #009129;
 }
 </style>
