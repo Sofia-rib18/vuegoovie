@@ -1657,6 +1657,9 @@ export default new Vuex.Store({
     },
   },
   actions: {
+    setLogin({ commit }){
+      commit('SET_LOGOUT')
+    }
   },
   modules: {
   }

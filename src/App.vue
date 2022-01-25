@@ -37,6 +37,11 @@
                 ></b-icon
               ></router-link>
             </b-nav-item>
+            <b-nav-item href="#" v-if="loggedIn" @click="setLogin()">
+              <router-link to="/">
+                <b-button id="logout">Logout</b-button>
+              </router-link>
+            </b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -89,29 +94,59 @@
   </div>
 </template>
 
+<script>
+
+import {mapGetters, mapActions } from 'vuex'
+export default {
+  computed: {
+    ...mapGetters({
+      loggedIn: 'getLoggedUser'
+    }),
+  },
+  methods: {
+    ...mapActions({
+      setLogin: 'setLogin'
+    })
+  },
+  
+}
+</script>
+
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 
-#app {
-  font-family: "Quicksand", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  #app {
+    font-family: "Quicksand", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
 
-#link {
-  padding: 30px;
-  color: #fef8f8;
-  text-decoration: none;
-}
+  #link {
+    padding: 30px;
+    color: #fef8f8;
+    text-decoration: none;
+  }
 
-#link:hover {
-  text-decoration: #de2221;
-  text-decoration-line: underline;
-}
+  #link:hover {
+    text-decoration: #de2221;
+    text-decoration-line: underline;
+  }
 
-#navbarBackground {
-  background: #070707;
-}
+  #navbarBackground {
+    background: #070707;
+  }
+
+  #logout{
+    background-color: #070707;
+    border-color: #de2221;
+    color: #fef8f8;
+    width: 100px;
+    height: 40px;
+  }
+
+  #logout:hover {
+    background-color: #de2221;
+  }
 </style>
