@@ -1558,7 +1558,9 @@ export default new Vuex.Store({
     points: 0,
     pointsQuizz: 0,
     questions: [],
-    questionsQuizz: []
+    questionsQuizz: [],
+    comments: [],
+    commentsSeries: []
 
   },
   getters: {
@@ -1588,6 +1590,9 @@ export default new Vuex.Store({
     getShow: (state) => (id) => state.series.find((serie) => serie.id == id),
     getActor: (state) => (id) => state.actors.find((actor) => actor.id == id),
     getDirector: (state) => (id) => state.directors.find((director) => director.id == id),
+    //Comentários
+    getComments: (state) => state.comments,
+    getCommentsSeries: (state) => state.commentsSeries,
   },
   mutations: {
     SET_LOGGED_USER(state, payload) {
@@ -1640,7 +1645,16 @@ export default new Vuex.Store({
       localStorage.currentQuestion = JSON.stringify(state.currentQuestion);
       state.questionsQuizz = [];
       localStorage.questionsQuizz = JSON.stringify(state.questionsQuizz);
-    }
+    },
+    //Comentários
+    SET_COMMENTS(state, payload) {
+      state.comments.push(payload);
+      localStorage.comments = JSON.stringify(state.comments);
+    },
+    SET_COMMENTS_SERIES(state, payload) {
+      state.commentsSeries.push(payload);
+      localStorage.commentsSeries = JSON.stringify(state.commentsSeries);
+    },
   },
   actions: {
   },

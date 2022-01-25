@@ -145,7 +145,7 @@
             }}</b-card-title>
             <b-button
               href="#"
-              id="button1"
+              id="button2"
               @click="
                 $router.push({ name: 'filme', params: { filmeId: movie.id } })
               "
@@ -180,7 +180,7 @@
             }}</b-card-title>
             <b-button
               href="#"
-              id="button1"
+              id="button2"
               @click="
                 $router.push({ name: 'serie', params: { serieId: serie.id } })
               "
@@ -205,7 +205,7 @@
         </b-col>
         <b-col>
           <h1>Guess the movies and shows</h1>
-          <b-button href="#" id="button1"
+          <b-button href="#" id="button2"
             ><router-link :to="{ name: 'game' }" style="color: #fef8f8">
               Play</router-link
             ></b-button
@@ -296,5 +296,14 @@ export default {
   color: #fef8f8;
   width: 170px;
   height: 40px;
+}
+#button2 {
+  background-color: transparent;
+  border-color: #de2221;
+  border-width: 2px;
+  color: #fef8f8;
+}
+#button2:hover {
+  background-color: #de2221;
 }
 </style>

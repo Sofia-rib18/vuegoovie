@@ -28,7 +28,7 @@
         <b-card-group
           deck
           style="margin-top: 30px"
-          v-for="(serie, index) in getSeries"
+          v-for="(serie, index) in series"
           :key="index"
         >
           <b-card
@@ -44,7 +44,7 @@
               @click="
                 $router.push({ name: 'serie', params: { serieId: serie.id } })
               "
-              id="button1"
+              id="button2"
               >View more</b-button
             >
           </b-card>
@@ -58,8 +58,22 @@
 import { mapGetters } from "vuex";
 
 export default {
+  data() {
+    return {
+      series: "",
+    };
+  },
+  created() {
+    this.shows();
+  },
   computed: {
     ...mapGetters(["getSeries"]),
+  },
+  methods: {
+    shows() {
+      this.series = this.getSeries;
+      console.log(this.series);
+    },
   },
 };
 </script>

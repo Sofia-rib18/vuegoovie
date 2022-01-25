@@ -1,9 +1,9 @@
-<template>
+<template >
   <div id="app1">
     <div v-if="serie">
       <div>
         <iframe
-          width="560"
+          width="900"
           height="315"
           :src="serie.trailer"
           title="YouTube video player"
@@ -24,15 +24,21 @@
           </b-col>
           <b-col>
             <h1>{{ serie.title }}</h1>
-            <p style="color: #fff8f7">{{ serie.genre.join(" | ") }}</p>
+            <p style="color: #fff8f7">
+              {{ serie.genre.join(" | ") }}
+            </p>
           </b-col>
           <b-col>
             <b-icon icon="star" font-scale="2" style="color: #baa5a3"></b-icon>
-            <b-icon icon="heart" font-scale="2" style="color: #baa5a3"></b-icon>
+            <b-icon
+              icon="heart"
+              font-scale="2"
+              style="color: #baa5a3; margin-left: 5px"
+            ></b-icon>
             <b-icon
               icon="check-circle"
               font-scale="2"
-              style="color: #baa5a3"
+              style="color: #baa5a3; margin-left: 5px"
             ></b-icon>
           </b-col>
         </b-row>
@@ -118,14 +124,15 @@
               <b-card-title style="color: #fff8f7">{{
                 actor.name
               }}</b-card-title>
+              <br />
+
               <b-button
                 href="#"
                 id="button1"
                 @click="
                   $router.push({ name: 'actor', params: { actorId: actor.id } })
                 "
-              >
-                View more</b-button
+                >View more</b-button
               >
             </b-card>
           </b-card-group>
@@ -135,46 +142,211 @@
         <b-row>
           <h1>Reviews</h1>
         </b-row>
-        <b-form inline style="margin-top: 5px">
+        <b-form inline style="margin-top: 5px" @submit.prevent="onReview">
           <b-form-textarea
-            id="input-5"
+            id="input-1"
             type="text"
+            v-model="review"
+            style="width: 750px"
             required
-            placeholder="Write your opinion about the serie here..."
+            placeholder="Write your opinion about the movie here..."
           ></b-form-textarea>
-          <b-button type="submit" id="buttonGame" style="margin-left: 200px"
-            >Publish</b-button
+          <!-- <b-button type="submit" id="buttonGame" style="margin-left: 200px"
+            >Submit</b-button
+          > -->
+          <b-button type="submit" id="buttonGame" style="margin-left: 150px"
+            >Submit</b-button
           >
         </b-form>
       </b-container>
+      <div v-if="user">
+        <div v-if="show">
+          <div v-for="(comment, index) in comment" :key="index">
+            <b-container id="container3">
+              <b-row>
+                <b-col>
+                  <b-avatar
+                    size="60px"
+                    style="margin-left: -320px"
+                    :src="comment.photo"
+                  >
+                  </b-avatar>
+                </b-col>
+                <b-col>
+                  <h4 style="margin-left: -730px; color: #fff8f7">
+                    {{ comment.user }}
+                  </h4>
+                </b-col>
+                <b-col>
+                  <b-icon
+                    v-b-modal.modal-1
+                    icon="flag"
+                    font-scale="1"
+                    style="margin-left: -400px; color: #baa5a3"
+                  ></b-icon>
+                </b-col>
+              </b-row>
+              <b-row>
+                <b-col></b-col>
+                <b-col
+                  ><p
+                    style="
+                      margin-left: -1390px;
+                      margin-top: -30px;
+                      color: #fff8f7;
+                      opacity: 20%;
+                    "
+                  >
+                    {{ comment.date }}
+                  </p></b-col
+                >
+              </b-row>
+              <b-row>
+                <b-col></b-col>
+                <b-col
+                  ><p style="margin-left: -300px; color: #fff8f7">
+                    {{ comment.review }}
+                  </p></b-col
+                >
+                <b-col></b-col>
+              </b-row>
+            </b-container>
+          </div>
+          <b-modal
+            id="modal-1"
+            hide-footer
+            hide-header
+            ref="my-modal"
+            style="background-color: #fff8f7"
+          >
+            <h1>Spoiler!?</h1>
+            <p class="my-4">Are you sure this comment is a spoiler?</p>
+            <b-button class="mt-3" id="buttonModal" @click="hideComment()"
+              >Yes</b-button
+            >
+            <b-button
+              class="mt-3"
+              id="buttonModal"
+              style="margin-left: 20px"
+              @click="showComment()"
+              >No</b-button
+            >
+          </b-modal>
+        </div>
+        <div
+          v-if="hide"
+          id="challenges"
+          style="max-width: 700px; margin-left: 200px; margin-top: 60px"
+        >
+          <b-container fluid="sm">
+            <b-row class="text-center">
+              <h1 id="h1" style="padding-left: 300px">Spoiler!?</h1>
+            </b-row>
+            <b-row class="text-center">
+              <img
+                center
+                style="max-height: 100px; padding-left: 320px; margin-top: 20px"
+                src="../assets/noun-robber-2343245.png"
+                alt=""
+              />
+            </b-row>
+            <b-row>
+              <b-button
+                id="buttonGame"
+                style="margin-left: 300px; margin-top: 20px"
+                @click="showComment"
+                >See anyway</b-button
+              >
+            </b-row>
+          </b-container>
+        </div>
+      </div>
+
+      <div v-else-if="notuser">
+        <h2>You have to be a user!</h2>
+        <b-button id="button1"
+          ><router-link to="/register" id="link">Registo</router-link></b-button
+        >
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   name: "Serie",
   data() {
     return {
-      serie: [],
       fields: ["Where_to_watch"],
       items: [],
+      serie: [],
+      review: "",
+      comment: "",
+      show: false,
+      hide: false,
+      userLogged: "",
+      user: false,
+      notuser: false,
     };
   },
   created() {
-    this.show();
+    this.seri();
   },
   computed: {
-    ...mapGetters(["getShow"]),
+    ...mapGetters(["getShow", "getCommentsSeries", "getLoggedUser"]),
   },
   methods: {
-    show() {
+    ...mapMutations(["SET_COMMENTS_SERIES"]),
+    seri() {
       this.serie = this.getShow(this.$route.params.serieId);
       this.items = this.serie.whereWatch;
       console.log(this.$route.params.serieId);
       console.log(this.serie);
+      this.userLogged = this.getLoggedUser;
+      this.show = true;
+    },
+    onReview() {
+      if (this.userLogged) {
+        this.user = true;
+        this.notuser = false;
+        let dt = new Date().toISOString().substr(0, 10);
+        this.SET_COMMENTS_SERIES({
+          idSerie: this.$route.params.serieId,
+          user: this.userLogged.username,
+          photo: this.userLogged.photo,
+          date: dt,
+          review: this.review,
+        });
+        console.log((this.comment = this.getCommentsSeries));
+        this.show = true;
+        this.hide = false;
+      } else {
+        this.notuser = true;
+        this.user = false;
+      }
+      this.sortUsers();
+    },
+    sortUsers() {
+      this.comment.sort(function (a, b) {
+        if (a.user.length > b.user.length) {
+          return -1;
+        } else if (a.user.length < b.user.length) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+    },
+    hideComment() {
+      // this.$refs["my-modal"].hide();
+      this.show = false;
+      this.hide = true;
+    },
+    showComment() {
+      this.show = true;
+      this.hide = false;
     },
   },
 };

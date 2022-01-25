@@ -44,7 +44,7 @@
               <div v-if="film.id <= 6">
                 <b-button
                   href="#"
-                  id="button1"
+                  id="button2"
                   @click="
                     $router.push({
                       name: 'filme',

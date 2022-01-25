@@ -44,7 +44,7 @@
               @click="
                 $router.push({ name: 'filme', params: { filmeId: movie.id } })
               "
-              id="button1"
+              id="button2"
               >View more</b-button
             >
           </b-card>
