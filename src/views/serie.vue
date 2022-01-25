@@ -130,7 +130,7 @@
 
               <b-button
                 href="#"
-                id="button1"
+                id="button2"
                 @click="
                   $router.push({ name: 'actor', params: { actorId: actor.id } })
                 "
@@ -149,7 +149,7 @@
             id="input-1"
             type="text"
             v-model="review"
-            style="width: 750px"
+            style="width: 750px; background: transparent; color: #fff8f7"
             required
             placeholder="Write your opinion about the movie here..."
           ></b-form-textarea>
