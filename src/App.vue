@@ -29,13 +29,14 @@
               <b-icon icon="search" width="30px" height="30px"></b-icon>
             </b-nav-item>
             <b-nav-item href="#">
-              <router-link to="/profile" id="link"
-                ><b-icon
+              <router-link to="/profile" id="link">
+                <b-avatar width="35px" height="35px" v-if="loggedIn" :src="loggedIn.photo"></b-avatar>
+                <b-icon v-else
                   icon="person-circle"
                   width="35px"
                   height="35px"
-                ></b-icon
-              ></router-link>
+                ></b-icon>
+              </router-link>
             </b-nav-item>
             <b-nav-item href="#" v-if="loggedIn" @click="setLogin()">
               <router-link to="/">

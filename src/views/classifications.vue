@@ -9,7 +9,7 @@
           id="dropdown-right"
           right
           text="Filter"
-          variant="primary"
+          variant="outline-danger"
           class="m-2"
         >
           <b-dropdown-item href="#">Worldwide</b-dropdown-item>
@@ -19,7 +19,6 @@
     </b-row>
     <b-row>
       <div>
-        <b-col></b-col>
         <b-col>
           <b-table-simple>
             <b-thead>
