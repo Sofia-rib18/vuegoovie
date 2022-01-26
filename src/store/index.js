@@ -23,14 +23,18 @@ export default new Vuex.Store({
         password: 'Esmad_2122',
         type: 'regular',
         location: 'fr',
-        points: 60
+        points: 60,
+        photo: 'https://p2.trrsf.com/image/fget/cf/1200/1200/filters:quality(85)/images.terra.com/2021/01/31/timotheechalamet.jpg',
+        favorites: []
       },
       {
         username: 'User2',
         password: 'Esmad_2122',
         type: 'regular',
         location: 'it',
-        points: 50
+        points: 50,
+        photo: 'https://studiosol-a.akamaihd.net/uploadfile/letras/fotos/8/9/f/6/89f6af6c672801fbcf9cfce8c69e217a.jpg',
+        favorites: []
       },
     ],
     loggedUser: null,
@@ -1657,7 +1661,7 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    setLogin({ commit }){
+    setLogin({ commit }) {
       commit('SET_LOGOUT')
     }
   },

@@ -1,15 +1,19 @@
 <template>
   <div id="profile">
-    <b-avatar size="100px"></b-avatar>
-    <h4 id="username">{{getLoggedUser.username}} <lang-flag :iso='getLoggedUser.location'/></h4>
-    <p id="description">We all make choices in life, but in the end our choices make us!</p>
+    <b-avatar size="100px" :src="getLoggedUser.photo"></b-avatar>
+    <h4 id="username">
+      {{ getLoggedUser.username }} <lang-flag :iso="getLoggedUser.location" />
+    </h4>
+    <p id="description">
+      We all make choices in life, but in the end our choices make us!
+    </p>
     <b-container class="bv-example-row">
       <b-row>
         <b-col>
           <p id="follow">100 followers</p>
         </b-col>
         <b-col>
-          <p id="points">{{getLoggedUser.points}} points</p>
+          <p id="points">{{ getLoggedUser.points }} points</p>
         </b-col>
       </b-row>
     </b-container>
@@ -95,62 +99,65 @@
 </template>
 
 <script>
-  import { mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 
-  export default {
-    computed: {
-      ...mapGetters(["getMovies", "getLoggedUser"]),
-    },
-  };
+export default {
+  computed: {
+    ...mapGetters(["getMovies", "getLoggedUser"]),
+  },
+};
 </script>
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 
-  #profile{
-    padding-top: 60px;
-    background-color: #070707;
-  }
+#profile {
+  padding-top: 60px;
+  background-color: #070707;
+}
 
-  #username{
-    font-family: "Anton", sans-serif;
-    padding-top: 20px;
-    color: #7c766d;
-  }
+#username {
+  font-family: "Anton", sans-serif;
+  padding-top: 20px;
+  color: #7c766d;
+}
 
-  #description, #follow, #points, #badgeName{
-    color: #fef8f8;
-  }
+#description,
+#follow,
+#points,
+#badgeName {
+  color: #fef8f8;
+}
 
-  #buttonEdit{
-    background-color: #070707;
-    border-color: #de2221;
-    color: #fef8f8;
-    width: 170px;
-    height: 40px;
-  }
+#buttonEdit {
+  background-color: #070707;
+  border-color: #de2221;
+  color: #fef8f8;
+  width: 170px;
+  height: 40px;
+}
 
-  #buttonEdit:hover{
-    background-color: #de2221;
-  }
+#buttonEdit:hover {
+  background-color: #de2221;
+}
 
-  #follow, #points{
-    padding-bottom: 30px;
-    padding-top: 20px;
-  }
+#follow,
+#points {
+  padding-bottom: 30px;
+  padding-top: 20px;
+}
 
-  #profile h2{
-    color: #7c766d;
-    padding-top: 30px;
-    padding-bottom:30px
-  }
+#profile h2 {
+  color: #7c766d;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 
-  #badgeContainer{
-    padding-bottom: 40px;
-  }
+#badgeContainer {
+  padding-bottom: 40px;
+}
 
-  footer{
-    background-color: #fef8f8;
-  }
-
+footer {
+  background-color: #fef8f8;
+}
 </style>
