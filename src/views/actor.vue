@@ -7,21 +7,26 @@
             <b-img
               left
               style="max-height: 200px"
-              :src="actor.photo"
+              :src="actor.poster"
               alt="Left image"
             ></b-img>
           </b-col>
           <b-col>
-            <h1>{{ actor.name }}</h1>
+            <h1>{{ actor.title }}</h1>
             <p style="color: #fff8f7">Actor</p>
           </b-col>
           <b-col>
-            <b-icon
-              class="heart"
-              icon="heart"
-              font-scale="2"
-              style="margin-left: 5px"
-            ></b-icon>
+            <b-button
+              @click="addFavorites(actor.id)"
+              style="background-color: transparent; border-color: transparent"
+            >
+              <b-icon
+                class="heart"
+                icon="heart"
+                font-scale="2"
+                style="margin-left: 5px"
+              ></b-icon>
+            </b-button>
           </b-col>
         </b-row>
       </b-container>
@@ -77,7 +82,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   name: "Actor",
@@ -93,10 +98,14 @@ export default {
     ...mapGetters(["getActor"]),
   },
   methods: {
+    ...mapMutations(["SET_FAVORITES_ACTOR"]),
     actors() {
       this.actor = this.getActor(this.$route.params.actorId);
       console.log(this.$route.params.actorId);
       console.log(this.actor);
+    },
+    addFavorites(id) {
+      this.SET_FAVORITES_ACTOR(id);
     },
   },
 };

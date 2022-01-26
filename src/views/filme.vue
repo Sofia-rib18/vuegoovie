@@ -31,12 +31,17 @@
           <b-col>
             <div>
               <b-icon icon="star" font-scale="2" class="star"></b-icon>
-              <b-icon
-                class="heart"
-                icon="heart"
-                font-scale="2"
-                style="margin-left: 5px"
-              ></b-icon>
+              <b-button
+                @click="addFavorites(film.id)"
+                style="background-color: transparent; border-color: transparent"
+              >
+                <b-icon
+                  class="heart"
+                  icon="heart"
+                  font-scale="2"
+                  style="margin-left: 5px"
+                ></b-icon>
+              </b-button>
               <b-icon
                 class="check"
                 icon="check-circle"
@@ -299,7 +304,7 @@ export default {
     ...mapGetters(["getFilm", "getComments", "getLoggedUser", "isId"]),
   },
   methods: {
-    ...mapMutations(["SET_COMMENTS"]),
+    ...mapMutations(["SET_COMMENTS", "SET_FAVORITES_FILM"]),
     filme() {
       this.film = this.getFilm(this.$route.params.filmeId);
       this.items = this.film.whereWatch;
@@ -349,6 +354,9 @@ export default {
     showComment() {
       this.show = true;
       this.hide = false;
+    },
+    addFavorites(id) {
+      this.SET_FAVORITES_FILM(id);
     },
   },
 };

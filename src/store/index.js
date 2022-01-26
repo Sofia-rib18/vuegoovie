@@ -16,7 +16,8 @@ export default new Vuex.Store({
         password: 'Esmad_2122',
         type: 'regular',
         location: 'pt',
-        points: 70
+        points: 70,
+        favorites: []
       },
       {
         username: 'User1',
@@ -37,7 +38,7 @@ export default new Vuex.Store({
         favorites: []
       },
     ],
-    loggedUser: null,
+    loggedUser: localStorage.loggedUser ? JSON.parse(localStorage.loggedUser) : null,
     films: localStorage.films ? JSON.parse(localStorage.films) : [
       {
         id: 1,
@@ -508,8 +509,8 @@ export default new Vuex.Store({
     actors: localStorage.actors ? JSON.parse(localStorage.actors) : [
       {
         id: 1,
-        name: 'Daniel Craig',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMjEzMjk4NDU4MF5BMl5BanBnXkFtZTcwMDMyNjQzMg@@._V1_UY1200_CR88,0,630,1200_AL_.jpg',
+        title: 'Daniel Craig',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjEzMjk4NDU4MF5BMl5BanBnXkFtZTcwMDMyNjQzMg@@._V1_UY1200_CR88,0,630,1200_AL_.jpg',
         films: [{
           id: 1,
           title: '007: No Time to Die',
@@ -521,8 +522,8 @@ export default new Vuex.Store({
         }],
       }, {
         id: 2,
-        name: 'Rami Malek',
-        photo: 'https://m.media-amazon.com/images/M/MV5BODA3OTM4ODU0MV5BMl5BanBnXkFtZTgwNjQ5Njg3NjM@._V1_UY1200_CR88,0,630,1200_AL_.jpg',
+        title: 'Rami Malek',
+        poster: 'https://m.media-amazon.com/images/M/MV5BODA3OTM4ODU0MV5BMl5BanBnXkFtZTgwNjQ5Njg3NjM@._V1_UY1200_CR88,0,630,1200_AL_.jpg',
         films: [{
           id: 1,
           title: '007: No Time to Die',
@@ -530,8 +531,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 3,
-        name: 'Léa Seydoux',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMjM3MTczNzY1MF5BMl5BanBnXkFtZTgwNjgwODgzNDE@._V1_.jpg',
+        title: 'Léa Seydoux',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjM3MTczNzY1MF5BMl5BanBnXkFtZTgwNjgwODgzNDE@._V1_.jpg',
         films: [{
           id: 1,
           title: '007: No Time to Die',
@@ -539,8 +540,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 4,
-        name: 'Lashana Lynch',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMjI0ZGE0ZTYtYmY1MS00MGU0LWEwMDQtMzYxMDFmMmFjZjUyXkEyXkFqcGdeQXVyMzczOTY5ODk@._V1_.jpg',
+        title: 'Lashana Lynch',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjI0ZGE0ZTYtYmY1MS00MGU0LWEwMDQtMzYxMDFmMmFjZjUyXkEyXkFqcGdeQXVyMzczOTY5ODk@._V1_.jpg',
         films: [{
           id: 1,
           title: '007: No Time to Die',
@@ -548,8 +549,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 5,
-        name: 'Ana de Armas',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMWM3MDMzNjMtODM5Ny00YmY0LWJhNzQtNTE1ZDNlNjllNDQ0XkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_UY1200_CR585,0,630,1200_AL_.jpg',
+        title: 'Ana de Armas',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMWM3MDMzNjMtODM5Ny00YmY0LWJhNzQtNTE1ZDNlNjllNDQ0XkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_UY1200_CR585,0,630,1200_AL_.jpg',
         films: [{
           id: 1,
           title: '007: No Time to Die',
@@ -561,8 +562,8 @@ export default new Vuex.Store({
         }]
       }, {
         id: 6,
-        name: 'Chris Evans',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMTU2NTg1OTQzMF5BMl5BanBnXkFtZTcwNjIyMjkyMg@@._V1_UY1200_CR112,0,630,1200_AL_.jpg',
+        title: 'Chris Evans',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTU2NTg1OTQzMF5BMl5BanBnXkFtZTcwNjIyMjkyMg@@._V1_UY1200_CR112,0,630,1200_AL_.jpg',
         films: [{
           id: 2,
           title: 'Knives Out',
@@ -570,8 +571,8 @@ export default new Vuex.Store({
         }]
       }, {
         id: 7,
-        name: 'Jamie Lee Curtis',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMjI0MTI0MDk2OV5BMl5BanBnXkFtZTgwODQ4MTE0NDE@._V1_UY1200_CR136,0,630,1200_AL_.jpg',
+        title: 'Jamie Lee Curtis',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjI0MTI0MDk2OV5BMl5BanBnXkFtZTgwODQ4MTE0NDE@._V1_UY1200_CR136,0,630,1200_AL_.jpg',
         films: [{
           id: 2,
           title: 'Knives Out',
@@ -579,8 +580,8 @@ export default new Vuex.Store({
         }]
       }, {
         id: 8,
-        name: 'Michael Shannon',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMjE0NzM5MTc5OF5BMl5BanBnXkFtZTgwMjc3ODYxODE@._V1_.jpg',
+        title: 'Michael Shannon',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjE0NzM5MTc5OF5BMl5BanBnXkFtZTgwMjc3ODYxODE@._V1_.jpg',
         films: [{
           id: 2,
           title: 'Knives Out',
@@ -588,8 +589,8 @@ export default new Vuex.Store({
         }]
       }, {
         id: 9,
-        name: 'Ralph Macchio',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMjExMjk0NTA5MF5BMl5BanBnXkFtZTcwMjM4MzU1Mw@@._V1_UY1200_CR103,0,630,1200_AL_.jpg',
+        title: 'Ralph Macchio',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjExMjk0NTA5MF5BMl5BanBnXkFtZTcwMjM4MzU1Mw@@._V1_UY1200_CR103,0,630,1200_AL_.jpg',
         films: [{
           id: 3,
           title: 'The Karate Kid',
@@ -597,8 +598,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 10,
-        name: 'Pat Morita',
-        photo: 'https://m.media-amazon.com/images/M/MV5BODIyNzYwNjE4NV5BMl5BanBnXkFtZTcwNzA3MzQ3Mw@@._V1_UY1200_CR99,0,630,1200_AL_.jpg',
+        title: 'Pat Morita',
+        poster: 'https://m.media-amazon.com/images/M/MV5BODIyNzYwNjE4NV5BMl5BanBnXkFtZTcwNzA3MzQ3Mw@@._V1_UY1200_CR99,0,630,1200_AL_.jpg',
         films: [{
           id: 3,
           title: 'The Karate Kid',
@@ -606,8 +607,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 11,
-        name: 'William Zabka',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMzlkODQ0ODMtYmQ5NS00MWZhLTlkMjAtYTMwYzg5MjNkNmFmXkEyXkFqcGdeQXVyMjUwNzgxNjk@._V1_UY1200_CR174,0,630,1200_AL_.jpg',
+        title: 'William Zabka',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMzlkODQ0ODMtYmQ5NS00MWZhLTlkMjAtYTMwYzg5MjNkNmFmXkEyXkFqcGdeQXVyMjUwNzgxNjk@._V1_UY1200_CR174,0,630,1200_AL_.jpg',
         films: [{
           id: 3,
           title: 'The Karate Kid',
@@ -615,8 +616,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 12,
-        name: 'Elisabeth Shue',
-        photo: 'https://static.tvtropes.org/pmwiki/pub/images/elizabeth_shue_2012.jpeg',
+        title: 'Elisabeth Shue',
+        poster: 'https://static.tvtropes.org/pmwiki/pub/images/elizabeth_shue_2012.jpeg',
         films: [{
           id: 3,
           title: 'The Karate Kid',
@@ -624,8 +625,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 13,
-        name: 'Martin Kove',
-        photo: 'https://upload.wikimedia.org/wikipedia/commons/5/5d/Martin_Kove_%2844524134200%29.jpg',
+        title: 'Martin Kove',
+        poster: 'https://upload.wikimedia.org/wikipedia/commons/5/5d/Martin_Kove_%2844524134200%29.jpg',
         films: [{
           id: 3,
           title: 'The Karate Kid',
@@ -633,8 +634,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 14,
-        name: 'Keanu Reeves',
-        photo: 'https://m.media-amazon.com/images/M/MV5BYTkzODI4MDMtNDNmZC00NDZlLWFmNTktNDRhOWE2YzhlZTQ2XkEyXkFqcGdeQXVyMTE1MTYxNDAw._V1_.jpg',
+        title: 'Keanu Reeves',
+        poster: 'https://m.media-amazon.com/images/M/MV5BYTkzODI4MDMtNDNmZC00NDZlLWFmNTktNDRhOWE2YzhlZTQ2XkEyXkFqcGdeQXVyMTE1MTYxNDAw._V1_.jpg',
         films: [{
           id: 4,
           title: 'Matrix',
@@ -642,8 +643,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 15,
-        name: 'Laurence Fishburne',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMTc0NjczNDc1MV5BMl5BanBnXkFtZTYwMDU0Mjg1._V1_UY1200_CR85,0,630,1200_AL_.jpg',
+        title: 'Laurence Fishburne',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTc0NjczNDc1MV5BMl5BanBnXkFtZTYwMDU0Mjg1._V1_UY1200_CR85,0,630,1200_AL_.jpg',
         films: [{
           id: 4,
           title: 'Matrix',
@@ -651,8 +652,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 16,
-        name: 'Carrie-Anne Moss',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMTYxMjgwNzEwOF5BMl5BanBnXkFtZTcwNTQ0NzI5Ng@@._V1_UY1200_CR138,0,630,1200_AL_.jpg',
+        title: 'Carrie-Anne Moss',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTYxMjgwNzEwOF5BMl5BanBnXkFtZTcwNTQ0NzI5Ng@@._V1_UY1200_CR138,0,630,1200_AL_.jpg',
         films: [{
           id: 4,
           title: 'Matrix',
@@ -660,8 +661,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 17,
-        name: 'Hugo Weaving',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMjAxMzAyNDQyMF5BMl5BanBnXkFtZTcwOTM4ODcxMw@@._V1_UY1200_CR106,0,630,1200_AL_.jpg',
+        title: 'Hugo Weaving',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjAxMzAyNDQyMF5BMl5BanBnXkFtZTcwOTM4ODcxMw@@._V1_UY1200_CR106,0,630,1200_AL_.jpg',
         films: [{
           id: 4,
           title: 'Matrix',
@@ -669,8 +670,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 18,
-        name: 'Joe Pantoliano',
-        photo: 'https://m.media-amazon.com/images/M/MV5BODBlYWY1MWUtZDdmYS00Y2VkLThmNDEtNGE4ZDAzNjk5NmI1XkEyXkFqcGdeQXVyNjUxMjc1OTM@._V1_UY1200_CR170,0,630,1200_AL_.jpg',
+        title: 'Joe Pantoliano',
+        poster: 'https://m.media-amazon.com/images/M/MV5BODBlYWY1MWUtZDdmYS00Y2VkLThmNDEtNGE4ZDAzNjk5NmI1XkEyXkFqcGdeQXVyNjUxMjc1OTM@._V1_UY1200_CR170,0,630,1200_AL_.jpg',
         films: [{
           id: 4,
           title: 'Matrix',
@@ -678,8 +679,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 19,
-        name: 'Stephanie Beatriz',
-        photo: 'https://m.media-amazon.com/images/M/MV5BYWY3ZGQ0OGUtZDNjYi00MmRkLWE4YmMtYzk3MzAwZjQxMDRlXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_UY1200_CR557,0,630,1200_AL_.jpg',
+        title: 'Stephanie Beatriz',
+        poster: 'https://m.media-amazon.com/images/M/MV5BYWY3ZGQ0OGUtZDNjYi00MmRkLWE4YmMtYzk3MzAwZjQxMDRlXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_UY1200_CR557,0,630,1200_AL_.jpg',
         films: [{
           id: 5,
           title: 'Encanto',
@@ -687,8 +688,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 20,
-        name: 'María Cecilia Botero',
-        photo: 'https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/335575/335575_173x253.jpg',
+        title: 'María Cecilia Botero',
+        poster: 'https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/335575/335575_173x253.jpg',
         films: [{
           id: 5,
           title: 'Encanto',
@@ -696,8 +697,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 21,
-        name: 'John Leguizamo',
-        photo: 'https://m.media-amazon.com/images/M/MV5BNTEyMjMxNDg5NF5BMl5BanBnXkFtZTcwNzczOTY4MQ@@._V1_UY1200_CR172,0,630,1200_AL_.jpg',
+        title: 'John Leguizamo',
+        poster: 'https://m.media-amazon.com/images/M/MV5BNTEyMjMxNDg5NF5BMl5BanBnXkFtZTcwNzczOTY4MQ@@._V1_UY1200_CR172,0,630,1200_AL_.jpg',
         films: [{
           id: 5,
           title: 'Encanto',
@@ -705,8 +706,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 22,
-        name: 'Wilmer Valderrama',
-        photo: 'https://m.media-amazon.com/images/M/MV5BY2U2NDkyMGYtNzg3YS00YmU0LTkyNzEtNWE5YzM0NmM1NzI2XkEyXkFqcGdeQXVyNTE0Mzg0MzM@._V1_UY1200_CR127,0,630,1200_AL_.jpg',
+        title: 'Wilmer Valderrama',
+        poster: 'https://m.media-amazon.com/images/M/MV5BY2U2NDkyMGYtNzg3YS00YmU0LTkyNzEtNWE5YzM0NmM1NzI2XkEyXkFqcGdeQXVyNTE0Mzg0MzM@._V1_UY1200_CR127,0,630,1200_AL_.jpg',
         films: [{
           id: 5,
           title: 'Encanto',
@@ -714,8 +715,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 23,
-        name: 'Jessica Darrow',
-        photo: 'https://m.media-amazon.com/images/M/MV5BZDBkOWZjNTMtNTE0OC00ODI1LThkNDEtNzI5Nzg3OTlkMTMxXkEyXkFqcGdeQXVyNzE4Njc3NjQ@._V1_UY1200_CR165,0,630,1200_AL_.jpg',
+        title: 'Jessica Darrow',
+        poster: 'https://m.media-amazon.com/images/M/MV5BZDBkOWZjNTMtNTE0OC00ODI1LThkNDEtNzI5Nzg3OTlkMTMxXkEyXkFqcGdeQXVyNzE4Njc3NjQ@._V1_UY1200_CR165,0,630,1200_AL_.jpg',
         films: [{
           id: 5,
           title: 'Encanto',
@@ -723,8 +724,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 24,
-        name: 'Meryl Streep',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMTU4Mjk5MDExOF5BMl5BanBnXkFtZTcwOTU1MTMyMw@@._V1_.jpg',
+        title: 'Meryl Streep',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTU4Mjk5MDExOF5BMl5BanBnXkFtZTcwOTU1MTMyMw@@._V1_.jpg',
         films: [{
           id: 6,
           title: 'Ricki and the Flash',
@@ -732,8 +733,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 25,
-        name: 'Kevin Kline',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMTMxMjcxMzMzMV5BMl5BanBnXkFtZTcwNjQzOTQ4Mg@@._V1_UY1200_CR85,0,630,1200_AL_.jpg',
+        title: 'Kevin Kline',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTMxMjcxMzMzMV5BMl5BanBnXkFtZTcwNjQzOTQ4Mg@@._V1_UY1200_CR85,0,630,1200_AL_.jpg',
         films: [{
           id: 6,
           title: 'Ricki and the Flash',
@@ -741,8 +742,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 26,
-        name: 'Mamie Gummer',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMTc2MDk3MTI1N15BMl5BanBnXkFtZTcwMDM0NjM1Mg@@._V1_UY1200_CR93,0,630,1200_AL_.jpg',
+        title: 'Mamie Gummer',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTc2MDk3MTI1N15BMl5BanBnXkFtZTcwMDM0NjM1Mg@@._V1_UY1200_CR93,0,630,1200_AL_.jpg',
         films: [{
           id: 6,
           title: 'Ricki and the Flash',
@@ -750,8 +751,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 27,
-        name: 'Sebastian Stan',
-        photo: 'https://m.media-amazon.com/images/M/MV5BNTk2OGU4NzktODhhOC00Nzc2LWIyNzYtOWViMjljZGFiNTMxXkEyXkFqcGdeQXVyMTE1NTQwOTk@._V1_UY1200_CR146,0,630,1200_AL_.jpg',
+        title: 'Sebastian Stan',
+        poster: 'https://m.media-amazon.com/images/M/MV5BNTk2OGU4NzktODhhOC00Nzc2LWIyNzYtOWViMjljZGFiNTMxXkEyXkFqcGdeQXVyMTE1NTQwOTk@._V1_UY1200_CR146,0,630,1200_AL_.jpg',
         films: [{
           id: 6,
           title: 'Ricki and the Flash',
@@ -759,8 +760,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 28,
-        name: 'Rick Springfield',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMjAzMzkxMzAwOF5BMl5BanBnXkFtZTcwMDk1MzMxMw@@._V1_.jpg',
+        title: 'Rick Springfield',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjAzMzkxMzAwOF5BMl5BanBnXkFtZTcwMDk1MzMxMw@@._V1_.jpg',
         films: [{
           id: 6,
           title: 'Ricki and the Flash',
@@ -768,8 +769,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 29,
-        name: 'Jennifer Anniston',
-        photo: 'https://m.media-amazon.com/images/M/MV5BNjk1MjIxNjUxNF5BMl5BanBnXkFtZTcwODk2NzM4Mg@@._V1_UY1200_CR103,0,630,1200_AL_.jpg',
+        title: 'Jennifer Anniston',
+        poster: 'https://m.media-amazon.com/images/M/MV5BNjk1MjIxNjUxNF5BMl5BanBnXkFtZTcwODk2NzM4Mg@@._V1_UY1200_CR103,0,630,1200_AL_.jpg',
         films: [{
           id: 7,
           title: 'Friends',
@@ -777,8 +778,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 30,
-        name: 'Courteney Cox',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMTA4OTczNDExNDNeQTJeQWpwZ15BbWU3MDUyNTIzMTM@._V1_.jpg',
+        title: 'Courteney Cox',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTA4OTczNDExNDNeQTJeQWpwZ15BbWU3MDUyNTIzMTM@._V1_.jpg',
         films: [{
           id: 7,
           title: 'Friends',
@@ -786,8 +787,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 31,
-        name: 'Lisa Kudrow',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMTU5OTA0ODcxNl5BMl5BanBnXkFtZTcwMjE3NjQxMw@@._V1_UY264_CR7,0,178,264_AL_.jpg',
+        title: 'Lisa Kudrow',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTU5OTA0ODcxNl5BMl5BanBnXkFtZTcwMjE3NjQxMw@@._V1_UY264_CR7,0,178,264_AL_.jpg',
         films: [{
           id: 7,
           title: 'Friends',
@@ -795,8 +796,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 32,
-        name: 'Matt LeBlanc',
-        photo: 'https://m.media-amazon.com/images/M/MV5BODQ0NTI0OTk0M15BMl5BanBnXkFtZTcwMDk2MDg5Nw@@._V1_UY1200_CR54,0,630,1200_AL_.jpg',
+        title: 'Matt LeBlanc',
+        poster: 'https://m.media-amazon.com/images/M/MV5BODQ0NTI0OTk0M15BMl5BanBnXkFtZTcwMDk2MDg5Nw@@._V1_UY1200_CR54,0,630,1200_AL_.jpg',
         films: [{
           id: 7,
           title: 'Friends',
@@ -804,8 +805,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 33,
-        name: 'Matthew Perry',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMTMwODc5NjI3N15BMl5BanBnXkFtZTcwNDEyMTE3Mw@@._V1_UY1200_CR156,0,630,1200_AL_.jpg',
+        title: 'Matthew Perry',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTMwODc5NjI3N15BMl5BanBnXkFtZTcwNDEyMTE3Mw@@._V1_UY1200_CR156,0,630,1200_AL_.jpg',
         films: [{
           id: 7,
           title: 'Friends',
@@ -813,8 +814,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 34,
-        name: 'David Schwimmer',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMTQ2Mjg5ODIzNF5BMl5BanBnXkFtZTgwNjIwMjI0ODE@._V1_.jpg',
+        title: 'David Schwimmer',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTQ2Mjg5ODIzNF5BMl5BanBnXkFtZTgwNjIwMjI0ODE@._V1_.jpg',
         films: [{
           id: 7,
           title: 'Friends',
@@ -822,8 +823,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 35,
-        name: 'Lee Dong-Wook',
-        photo: 'https://m.media-amazon.com/images/M/MV5BYTc1ZTA1YmItMTIwZS00ZDczLTk1NzEtMTE4OWNkNzE5MzQyXkEyXkFqcGdeQXVyMjMxNTAxNDk@._V1_.jpg',
+        title: 'Lee Dong-Wook',
+        poster: 'https://m.media-amazon.com/images/M/MV5BYTc1ZTA1YmItMTIwZS00ZDczLTk1NzEtMTE4OWNkNzE5MzQyXkEyXkFqcGdeQXVyMjMxNTAxNDk@._V1_.jpg',
         films: [{
           id: 8,
           title: 'Bad and Crazy',
@@ -831,8 +832,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 36,
-        name: 'Han Ji-Eun',
-        photo: 'https://m.media-amazon.com/images/M/MV5BNGFjYjQyZGMtOWNkMC00ZWM3LWFhNjgtYWFlYWJjOGM4ZDU1XkEyXkFqcGdeQXVyNDY5MjMyNTg@._V1_UY1200_CR85,0,630,1200_AL_.jpg',
+        title: 'Han Ji-Eun',
+        poster: 'https://m.media-amazon.com/images/M/MV5BNGFjYjQyZGMtOWNkMC00ZWM3LWFhNjgtYWFlYWJjOGM4ZDU1XkEyXkFqcGdeQXVyNDY5MjMyNTg@._V1_UY1200_CR85,0,630,1200_AL_.jpg',
         films: [{
           id: 8,
           title: 'Bad and Crazy',
@@ -840,8 +841,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 37,
-        name: 'Cha Hak-yeon',
-        photo: 'https://1739752386.rsc.cdn77.org/data/images/full/246914/cha-hak-yeon.jpg',
+        title: 'Cha Hak-yeon',
+        poster: 'https://1739752386.rsc.cdn77.org/data/images/full/246914/cha-hak-yeon.jpg',
         films: [{
           id: 8,
           title: 'Bad and Crazy',
@@ -849,8 +850,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 38,
-        name: 'Wi Ha-Joon',
-        photo: 'https://i.mydramalist.com/xzdP0_5f.jpg',
+        title: 'Wi Ha-Joon',
+        poster: 'https://i.mydramalist.com/xzdP0_5f.jpg',
         films: [{
           id: 8,
           title: 'Bad and Crazy',
@@ -858,8 +859,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 39,
-        name: 'Kim Hieora',
-        photo: 'https://asianwiki.com/images/0/03/Kim_Hieora-1989-p1.jpg',
+        title: 'Kim Hieora',
+        poster: 'https://asianwiki.com/images/0/03/Kim_Hieora-1989-p1.jpg',
         films: [{
           id: 8,
           title: 'Bad and Crazy',
@@ -867,8 +868,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 40,
-        name: 'Hunter Schafer',
-        photo: 'https://m.media-amazon.com/images/M/MV5BYTE4ZmU3NTQtMWY0OC00YmQ5LThlOTEtMTc3NjcwZjMwN2QzXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_UY1200_CR84,0,630,1200_AL_.jpg',
+        title: 'Hunter Schafer',
+        poster: 'https://m.media-amazon.com/images/M/MV5BYTE4ZmU3NTQtMWY0OC00YmQ5LThlOTEtMTc3NjcwZjMwN2QzXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_UY1200_CR84,0,630,1200_AL_.jpg',
         films: [{
           id: 9,
           title: 'Euphoria',
@@ -876,8 +877,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 41,
-        name: 'Zendaya',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMjAxZTk4NDAtYjI3Mi00OTk3LTg0NDEtNWFlNzE5NDM5MWM1XkEyXkFqcGdeQXVyOTI3MjYwOQ@@._V1_UY1200_CR135,0,630,1200_AL_.jpg',
+        title: 'Zendaya',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjAxZTk4NDAtYjI3Mi00OTk3LTg0NDEtNWFlNzE5NDM5MWM1XkEyXkFqcGdeQXVyOTI3MjYwOQ@@._V1_UY1200_CR135,0,630,1200_AL_.jpg',
         films: [{
           id: 9,
           title: 'Euphoria',
@@ -885,8 +886,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 42,
-        name: 'Angus Cloud',
-        photo: 'https://m.media-amazon.com/images/M/MV5BZmI3MjMxYTQtOGVlNi00MjJkLTkzYjctMWU2ZmEyZTczZjFiXkEyXkFqcGdeQXVyMTI1MTQ4MTM3._V1_.jpg',
+        title: 'Angus Cloud',
+        poster: 'https://m.media-amazon.com/images/M/MV5BZmI3MjMxYTQtOGVlNi00MjJkLTkzYjctMWU2ZmEyZTczZjFiXkEyXkFqcGdeQXVyMTI1MTQ4MTM3._V1_.jpg',
         films: [{
           id: 9,
           title: 'Euphoria',
@@ -894,8 +895,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 43,
-        name: 'Sydney Sweeney',
-        photo: 'https://m.media-amazon.com/images/M/MV5BOTVjOTkxNjMtNDJiYS00YzEzLThmZTItZjJhM2E4NWQyM2Q2XkEyXkFqcGdeQXVyNzM1NTU0NA@@._V1_.jpg',
+        title: 'Sydney Sweeney',
+        poster: 'https://m.media-amazon.com/images/M/MV5BOTVjOTkxNjMtNDJiYS00YzEzLThmZTItZjJhM2E4NWQyM2Q2XkEyXkFqcGdeQXVyNzM1NTU0NA@@._V1_.jpg',
         films: [{
           id: 9,
           title: 'Euphoria',
@@ -903,8 +904,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 44,
-        name: 'Jacob Elordi',
-        photo: 'https://i.pinimg.com/originals/ed/03/d6/ed03d6c2b7225c2d8be27fabb06a7b8d.jpg',
+        title: 'Jacob Elordi',
+        poster: 'https://i.pinimg.com/originals/ed/03/d6/ed03d6c2b7225c2d8be27fabb06a7b8d.jpg',
         films: [{
           id: 9,
           title: 'Euphoria',
@@ -912,8 +913,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 45,
-        name: 'Cillian Murphy',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMTMyODk0MDUyOF5BMl5BanBnXkFtZTcwNzQyODU2Mw@@._V1_.jpg',
+        title: 'Cillian Murphy',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTMyODk0MDUyOF5BMl5BanBnXkFtZTcwNzQyODU2Mw@@._V1_.jpg',
         films: [{
           id: 10,
           title: 'Peaky Blinders',
@@ -921,8 +922,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 46,
-        name: 'Paul Anderson',
-        photo: 'https://m.media-amazon.com/images/M/MV5BNzQ5ZTk5MGUtYjRmYi00NTIzLWFlYjMtZjk5MGFlNTg5ODViXkEyXkFqcGdeQXVyMzIzNjk4NzM@._V1_.jpg',
+        title: 'Paul Anderson',
+        poster: 'https://m.media-amazon.com/images/M/MV5BNzQ5ZTk5MGUtYjRmYi00NTIzLWFlYjMtZjk5MGFlNTg5ODViXkEyXkFqcGdeQXVyMzIzNjk4NzM@._V1_.jpg',
         films: [{
           id: 10,
           title: 'Peaky Blinders',
@@ -930,8 +931,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 47,
-        name: 'Helen McCrory',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMTQ2MDM2OTU0MV5BMl5BanBnXkFtZTgwMDk2MTIzNTE@._V1_UY1200_CR580,0,630,1200_AL_.jpg',
+        title: 'Helen McCrory',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTQ2MDM2OTU0MV5BMl5BanBnXkFtZTgwMDk2MTIzNTE@._V1_UY1200_CR580,0,630,1200_AL_.jpg',
         films: [{
           id: 10,
           title: 'Peaky Blinders',
@@ -939,8 +940,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 48,
-        name: 'Sophie Rundle',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMzIwODI2NzY2OV5BMl5BanBnXkFtZTgwNDk5Mjc0ODE@._V1_.jpg',
+        title: 'Sophie Rundle',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMzIwODI2NzY2OV5BMl5BanBnXkFtZTgwNDk5Mjc0ODE@._V1_.jpg',
         films: [{
           id: 10,
           title: 'Peaky Blinders',
@@ -948,8 +949,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 49,
-        name: 'Ned Dennehy',
-        photo: 'https://m.media-amazon.com/images/M/MV5BYzYyNjY3MTUtZWQ4MC00MjQ4LTliNTItMDMwNDczYjQyZDIzXkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg',
+        title: 'Ned Dennehy',
+        poster: 'https://m.media-amazon.com/images/M/MV5BYzYyNjY3MTUtZWQ4MC00MjQ4LTliNTItMDMwNDczYjQyZDIzXkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg',
         films: [{
           id: 10,
           title: 'Peaky Blinders',
@@ -957,8 +958,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 50,
-        name: 'Jodie Comer',
-        photo: 'https://m.media-amazon.com/images/M/MV5BZmViMjQxYTUtZDExNy00NjU1LWI4MmEtY2RhODRkMzNkODM1XkEyXkFqcGdeQXVyNjkwNzEwMzY@._V1_.jpg',
+        title: 'Jodie Comer',
+        poster: 'https://m.media-amazon.com/images/M/MV5BZmViMjQxYTUtZDExNy00NjU1LWI4MmEtY2RhODRkMzNkODM1XkEyXkFqcGdeQXVyNjkwNzEwMzY@._V1_.jpg',
         films: [{
           id: 11,
           title: 'Killing Eve',
@@ -966,8 +967,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 51,
-        name: 'Sandra Oh',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMTMyNzYyNDE4MV5BMl5BanBnXkFtZTcwOTkxMDQ2NA@@._V1_.jpg',
+        title: 'Sandra Oh',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTMyNzYyNDE4MV5BMl5BanBnXkFtZTcwOTkxMDQ2NA@@._V1_.jpg',
         films: [{
           id: 11,
           title: 'Killing Eve',
@@ -975,8 +976,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 52,
-        name: 'Fiona Shaw',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMjA0OTE5OTU2MV5BMl5BanBnXkFtZTcwNTk3NTc1NA@@._V1_UY1200_CR84,0,630,1200_AL_.jpg',
+        title: 'Fiona Shaw',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjA0OTE5OTU2MV5BMl5BanBnXkFtZTcwNTk3NTc1NA@@._V1_UY1200_CR84,0,630,1200_AL_.jpg',
         films: [{
           id: 11,
           title: 'Killing Eve',
@@ -984,8 +985,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 53,
-        name: 'Kim Bodnia',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMjA1NzYzNzYwMl5BMl5BanBnXkFtZTgwOTY3NjI3NTM@._V1_UY1200_CR584,0,630,1200_AL_.jpg',
+        title: 'Kim Bodnia',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjA1NzYzNzYwMl5BMl5BanBnXkFtZTgwOTY3NjI3NTM@._V1_UY1200_CR584,0,630,1200_AL_.jpg',
         films: [{
           id: 11,
           title: 'Killing Eve',
@@ -993,8 +994,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 54,
-        name: 'Owen McDonnell',
-        photo: 'https://m.media-amazon.com/images/M/MV5BOThkM2VkNzgtYjMwYi00ZmY0LTkzMTMtMWVlN2NmOWQxNGU0XkEyXkFqcGdeQXVyNDU2NjExMjg@._V1_UY1200_CR165,0,630,1200_AL_.jpg',
+        title: 'Owen McDonnell',
+        poster: 'https://m.media-amazon.com/images/M/MV5BOThkM2VkNzgtYjMwYi00ZmY0LTkzMTMtMWVlN2NmOWQxNGU0XkEyXkFqcGdeQXVyNDU2NjExMjg@._V1_UY1200_CR165,0,630,1200_AL_.jpg',
         films: [{
           id: 11,
           title: 'Killing Eve',
@@ -1002,8 +1003,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 55,
-        name: 'Jung Hae-In',
-        photo: 'https://m.media-amazon.com/images/M/MV5BNDkyOWNkZDEtYmQ4NC00Njc0LTlhMzMtNDliMTU2ZGU0YjA4XkEyXkFqcGdeQXVyNzI1NzMxNzM@._V1_.jpg',
+        title: 'Jung Hae-In',
+        poster: 'https://m.media-amazon.com/images/M/MV5BNDkyOWNkZDEtYmQ4NC00Njc0LTlhMzMtNDliMTU2ZGU0YjA4XkEyXkFqcGdeQXVyNzI1NzMxNzM@._V1_.jpg',
         films: [{
           id: 12,
           title: 'Snowdrop',
@@ -1011,8 +1012,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 56,
-        name: 'Kim Ji-soo',
-        photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Kim_Ji-soo_at_the_Dior_Pop-Up_Store_Opening_Event_on_August_19%2C_2019_%285%29.png/220px-Kim_Ji-soo_at_the_Dior_Pop-Up_Store_Opening_Event_on_August_19%2C_2019_%285%29.png',
+        title: 'Kim Ji-soo',
+        poster: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Kim_Ji-soo_at_the_Dior_Pop-Up_Store_Opening_Event_on_August_19%2C_2019_%285%29.png/220px-Kim_Ji-soo_at_the_Dior_Pop-Up_Store_Opening_Event_on_August_19%2C_2019_%285%29.png',
         films: [{
           id: 12,
           title: 'Snowdrop',
@@ -1020,8 +1021,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 57,
-        name: 'Yoo In-Na',
-        photo: 'https://m.media-amazon.com/images/M/MV5BZjI3ZmQ1YzktYzNjMi00NmZjLWI0ZGQtZDFiOGI1YjYxYTQ2XkEyXkFqcGdeQXVyMjMxNTAxNDk@._V1_UY1200_CR196,0,630,1200_AL_.jpg',
+        title: 'Yoo In-Na',
+        poster: 'https://m.media-amazon.com/images/M/MV5BZjI3ZmQ1YzktYzNjMi00NmZjLWI0ZGQtZDFiOGI1YjYxYTQ2XkEyXkFqcGdeQXVyMjMxNTAxNDk@._V1_UY1200_CR196,0,630,1200_AL_.jpg',
         films: [{
           id: 12,
           title: 'Snowdrop',
@@ -1029,8 +1030,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 58,
-        name: 'Yoon Se-ah',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMWQwNmQzMzEtZDZhNC00YmRmLWEyOWEtMjNmMmNiYzQwOTdlXkEyXkFqcGdeQXVyNDY5MjMyNTg@._V1_.jpg',
+        title: 'Yoon Se-ah',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMWQwNmQzMzEtZDZhNC00YmRmLWEyOWEtMjNmMmNiYzQwOTdlXkEyXkFqcGdeQXVyNDY5MjMyNTg@._V1_.jpg',
         films: [{
           id: 12,
           title: 'Snowdrop',
@@ -1038,8 +1039,8 @@ export default new Vuex.Store({
         },]
       }, {
         id: 59,
-        name: 'Kim Jung-nan',
-        photo: 'https://m.media-amazon.com/images/M/MV5BNGQyYjYwZTQtZmE5OS00NWI3LWFkZTMtMDZhMjVmNmI3Y2I5XkEyXkFqcGdeQXVyNTI5NjIyMw@@._V1_UY1200_CR85,0,630,1200_AL_.jpg',
+        title: 'Kim Jung-nan',
+        poster: 'https://m.media-amazon.com/images/M/MV5BNGQyYjYwZTQtZmE5OS00NWI3LWFkZTMtMDZhMjVmNmI3Y2I5XkEyXkFqcGdeQXVyNTI5NjIyMw@@._V1_UY1200_CR85,0,630,1200_AL_.jpg',
         films: [{
           id: 12,
           title: 'Snowdrop',
@@ -1050,8 +1051,8 @@ export default new Vuex.Store({
     directors: localStorage.directors ? JSON.parse(localStorage.directors) : [
       {
         id: 1,
-        name: 'Cary Joji Fukunaga',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMTU4MTY2ODExMV5BMl5BanBnXkFtZTcwMzEwNzY2NA@@._V1_.jpg',
+        title: 'Cary Joji Fukunaga',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTU4MTY2ODExMV5BMl5BanBnXkFtZTcwMzEwNzY2NA@@._V1_.jpg',
         films: [{
           id: 1,
           title: '007: No Time to Die',
@@ -1059,8 +1060,8 @@ export default new Vuex.Store({
         },],
       }, {
         id: 2,
-        name: 'Rian Johnson',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMjA3MTQwNjYyM15BMl5BanBnXkFtZTcwNTI5ODUwNQ@@._V1_.jpg',
+        title: 'Rian Johnson',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjA3MTQwNjYyM15BMl5BanBnXkFtZTcwNTI5ODUwNQ@@._V1_.jpg',
         films: [{
           id: 2,
           title: 'Knives Out',
@@ -1068,8 +1069,8 @@ export default new Vuex.Store({
         },],
       }, {
         id: 3,
-        name: 'John G. Avildsen',
-        photo: 'https://resizing.flixster.com/whdN6imeI1BettyM7wHvljuGsxY=/218x280/v2/https://flxt.tmsimg.com/assets/75909_v9_ba.jpg',
+        title: 'John G. Avildsen',
+        poster: 'https://resizing.flixster.com/whdN6imeI1BettyM7wHvljuGsxY=/218x280/v2/https://flxt.tmsimg.com/assets/75909_v9_ba.jpg',
         films: [{
           id: 3,
           title: 'The Karate Kid',
@@ -1077,8 +1078,8 @@ export default new Vuex.Store({
         },],
       }, {
         id: 4,
-        name: 'Lana Wachowski',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMjEzMTc2MDQ5OV5BMl5BanBnXkFtZTcwNjkzNDY0OA@@._V1_.jpg',
+        title: 'Lana Wachowski',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjEzMTc2MDQ5OV5BMl5BanBnXkFtZTcwNjkzNDY0OA@@._V1_.jpg',
         films: [{
           id: 4,
           title: 'Matrix',
@@ -1086,8 +1087,8 @@ export default new Vuex.Store({
         },],
       }, {
         id: 5,
-        name: 'Lily Wachowski',
-        photo: 'https://image.tmdb.org/t/p/w300/9sxE10LUA7TGlS1pHw2RM6mckHp.jpg',
+        title: 'Lily Wachowski',
+        poster: 'https://image.tmdb.org/t/p/w300/9sxE10LUA7TGlS1pHw2RM6mckHp.jpg',
         films: [{
           id: 4,
           title: 'Matrix',
@@ -1095,8 +1096,8 @@ export default new Vuex.Store({
         },],
       }, {
         id: 6,
-        name: 'Jared Bush',
-        photo: 'https://cdn.celpox.com/bby_uploads/celeb/bbb156c6d2a394a2b7b10216a75c384b.jpg',
+        title: 'Jared Bush',
+        poster: 'https://cdn.celpox.com/bby_uploads/celeb/bbb156c6d2a394a2b7b10216a75c384b.jpg',
         films: [{
           id: 5,
           title: 'Encanto',
@@ -1104,8 +1105,8 @@ export default new Vuex.Store({
         },],
       }, {
         id: 7,
-        name: 'Byron Howard',
-        photo: 'https://yankeetv.com/wiki/wp-content/uploads/2021/04/Byron-Howard.jpg',
+        title: 'Byron Howard',
+        poster: 'https://yankeetv.com/wiki/wp-content/uploads/2021/04/Byron-Howard.jpg',
         films: [{
           id: 5,
           title: 'Encanto',
@@ -1113,8 +1114,8 @@ export default new Vuex.Store({
         },],
       }, {
         id: 8,
-        name: 'Jonathan Demme',
-        photo: 'https://fr.web.img5.acsta.net/pictures/15/07/27/16/51/247397.jpg',
+        title: 'Jonathan Demme',
+        poster: 'https://fr.web.img5.acsta.net/pictures/15/07/27/16/51/247397.jpg',
         films: [{
           id: 6,
           title: 'Ricki and the Flash',
@@ -1122,8 +1123,8 @@ export default new Vuex.Store({
         },],
       }, {
         id: 9,
-        name: 'David Crane',
-        photo: 'https://m.media-amazon.com/images/M/MV5BNDAxODQxMTM0OF5BMl5BanBnXkFtZTcwODg2MDg5Nw@@._V1_.jpg',
+        title: 'David Crane',
+        poster: 'https://m.media-amazon.com/images/M/MV5BNDAxODQxMTM0OF5BMl5BanBnXkFtZTcwODg2MDg5Nw@@._V1_.jpg',
         films: [{
           id: 7,
           title: 'Friends',
@@ -1131,8 +1132,8 @@ export default new Vuex.Store({
         },],
       }, {
         id: 10,
-        name: 'Marta Kauffman',
-        photo: 'https://br.web.img3.acsta.net/pictures/18/01/20/23/12/2024485.jpg',
+        title: 'Marta Kauffman',
+        poster: 'https://br.web.img3.acsta.net/pictures/18/01/20/23/12/2024485.jpg',
         films: [{
           id: 7,
           title: 'Friends',
@@ -1140,8 +1141,8 @@ export default new Vuex.Store({
         },],
       }, {
         id: 11,
-        name: 'Yoo Seon-dong',
-        photo: 'https://i.mydramalist.com/Wm5m5f.jpg',
+        title: 'Yoo Seon-dong',
+        poster: 'https://i.mydramalist.com/Wm5m5f.jpg',
         films: [{
           id: 8,
           title: 'Bad and Crazy',
@@ -1149,8 +1150,8 @@ export default new Vuex.Store({
         },],
       }, {
         id: 12,
-        name: 'Sam Levinson',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMjIxNDc1MTMyNF5BMl5BanBnXkFtZTgwNjA3ODI2NDM@._V1_.jpg',
+        title: 'Sam Levinson',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjIxNDc1MTMyNF5BMl5BanBnXkFtZTgwNjA3ODI2NDM@._V1_.jpg',
         films: [{
           id: 9,
           title: 'Euphoria',
@@ -1158,8 +1159,8 @@ export default new Vuex.Store({
         },],
       }, {
         id: 13,
-        name: 'Steven Knight',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMjE4ODQwODcxN15BMl5BanBnXkFtZTgwNjU0MzcxMDE@._V1_.jpg',
+        title: 'Steven Knight',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjE4ODQwODcxN15BMl5BanBnXkFtZTgwNjU0MzcxMDE@._V1_.jpg',
         films: [{
           id: 10,
           title: 'Peaky Blinders',
@@ -1167,8 +1168,8 @@ export default new Vuex.Store({
         },],
       }, {
         id: 14,
-        name: 'Phoebe Waller-Bridge',
-        photo: 'https://m.media-amazon.com/images/M/MV5BMjQxNzYxODg4NF5BMl5BanBnXkFtZTgwNzE1NzYzMjI@._V1_.jpg',
+        title: 'Phoebe Waller-Bridge',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjQxNzYxODg4NF5BMl5BanBnXkFtZTgwNzE1NzYzMjI@._V1_.jpg',
         films: [{
           id: 11,
           title: 'Killing Eve',
@@ -1176,8 +1177,8 @@ export default new Vuex.Store({
         },],
       }, {
         id: 15,
-        name: 'Jo Hyun-tak',
-        photo: 'https://www.themoviedb.org/t/p/w235_and_h235_face/dyeNlVJGKxjHFfOPPBROe8xy1Bt.jpg',
+        title: 'Jo Hyun-tak',
+        poster: 'https://www.themoviedb.org/t/p/w235_and_h235_face/dyeNlVJGKxjHFfOPPBROe8xy1Bt.jpg',
         films: [{
           id: 12,
           title: 'Snowdrop',
@@ -1659,6 +1660,39 @@ export default new Vuex.Store({
       state.commentsSeries.push(payload);
       localStorage.commentsSeries = JSON.stringify(state.commentsSeries);
     },
+    //Favoritos
+    SET_FAVORITES_FILM(state, payload) {
+      state.films.map((film) => {
+        if (film.id === payload) {
+          state.loggedUser.favorites.push(film)
+        }
+      })
+    },
+    SET_FAVORITES_SERIE(state, payload) {
+      state.series.map((serie) => {
+        if (serie.id === payload) {
+          state.loggedUser.favorites.push(serie)
+        }
+      })
+    },
+    SET_FAVORITES_ACTOR(state, payload) {
+      state.actors.map((actor) => {
+        if (actor.id === payload) {
+          state.loggedUser.favorites.push(actor)
+        }
+      })
+    },
+    SET_FAVORITES_DIRECTOR(state, payload) {
+      state.directors.map((director) => {
+        if (director.id === payload) {
+          state.loggedUser.favorites.push(director)
+        }
+      })
+    },
+    SET_REMOVE_FAVORITE(state, payload) {
+      state.loggedUser.favorites = state.loggedUser.favorites.filter((favorite) =>
+        favorite.title != payload)
+    }
   },
   actions: {
     setLogin({ commit }) {

@@ -30,12 +30,17 @@
           </b-col>
           <b-col>
             <b-icon icon="star" font-scale="2" class="star"></b-icon>
-            <b-icon
-              icon="heart"
-              font-scale="2"
-              style="margin-left: 5px"
-              class="heart"
-            ></b-icon>
+            <b-button
+              @click="addFavorites(serie.id)"
+              style="background-color: transparent; border-color: transparent"
+            >
+              <b-icon
+                class="heart"
+                icon="heart"
+                font-scale="2"
+                style="margin-left: 5px"
+              ></b-icon>
+            </b-button>
             <b-icon
               class="check"
               icon="check-circle"
@@ -300,7 +305,7 @@ export default {
     ...mapGetters(["getShow", "getCommentsSeries", "getLoggedUser"]),
   },
   methods: {
-    ...mapMutations(["SET_COMMENTS_SERIES"]),
+    ...mapMutations(["SET_COMMENTS_SERIES", "SET_FAVORITES_SERIE"]),
     seri() {
       this.serie = this.getShow(this.$route.params.serieId);
       this.items = this.serie.whereWatch;
@@ -349,6 +354,9 @@ export default {
     showComment() {
       this.show = true;
       this.hide = false;
+    },
+    addFavorites(id) {
+      this.SET_FAVORITES_SERIE(id);
     },
   },
 };

@@ -7,21 +7,26 @@
             <b-img
               left
               style="max-height: 200px"
-              :src="director.photo"
+              :src="director.poster"
               alt="Left image"
             ></b-img>
           </b-col>
           <b-col>
-            <h1>{{ director.name }}</h1>
+            <h1>{{ director.title }}</h1>
             <p style="color: #fff8f7">Director</p>
           </b-col>
           <b-col>
-            <b-icon
-              class="heart"
-              icon="heart"
-              font-scale="2"
-              style="margin-left: 5px"
-            ></b-icon>
+            <b-button
+              @click="addFavorites(director.id)"
+              style="background-color: transparent; border-color: transparent"
+            >
+              <b-icon
+                class="heart"
+                icon="heart"
+                font-scale="2"
+                style="margin-left: 5px"
+              ></b-icon>
+            </b-button>
           </b-col>
         </b-row>
       </b-container>
@@ -77,7 +82,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   name: "Director",
@@ -93,10 +98,14 @@ export default {
     ...mapGetters(["getDirector"]),
   },
   methods: {
+    ...mapMutations(["SET_FAVORITES_DIRECTOR"]),
     directors() {
       this.director = this.getDirector(this.$route.params.directorId);
       console.log(this.$route.params.directorId);
       console.log(this.director);
+    },
+    addFavorites(id) {
+      this.SET_FAVORITES_DIRECTOR(id);
     },
   },
 };

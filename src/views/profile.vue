@@ -60,15 +60,12 @@
     <!-- Filmes -->
     <b-container fluid="sm">
       <b-row>
-        <b-card-group deck v-for="(movie, index) in getMovies" :key="index">
+        <b-card-group deck v-for="(favorite, index) in favorites" :key="index">
           <b-card tag="article" style="max-width: 20rem" class="mb-6">
-            <b-card-img :src="movie.poster"></b-card-img>
-            <b-card-title>{{ movie.title }}</b-card-title>
-            <b-button
-              ><router-link
-                :to="{ name: 'filmes', params: { filmesId: movie.id } }"
-                >View more</router-link
-              ></b-button
+            <b-card-img :src="favorite.poster"></b-card-img>
+            <b-card-title>{{ favorite.title }}</b-card-title>
+            <b-button id="button2" @click="removeFavorite(favorite.title)"
+              >Remove</b-button
             >
           </b-card>
         </b-card-group>
@@ -99,11 +96,20 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   computed: {
     ...mapGetters(["getMovies", "getLoggedUser"]),
+    favorites() {
+      return this.getLoggedUser.favorites;
+    },
+  },
+  methods: {
+    ...mapMutations(["SET_REMOVE_FAVORITE"]),
+    removeFavorite(title) {
+      this.SET_REMOVE_FAVORITE(title);
+    },
   },
 };
 </script>
