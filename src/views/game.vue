@@ -13,6 +13,7 @@
       <b-form @submit.prevent="gessMovie">
         <b-form-input
           id="input-5"
+          style="margin-left: 470px"
           type="text"
           v-model="answer"
           required

@@ -13,6 +13,7 @@
       <b-form @submit.prevent="gessMovie">
         <b-form-input
           id="input-5"
+          style="margin-left: 470px"
           type="text"
           v-model="answer"
           required
@@ -21,6 +22,7 @@
         <b-button type="submit" id="buttonGame">Submit</b-button>
         <b-button type="reset" id="buttonGame2">Reset</b-button>
       </b-form>
+      <br /><br /><br /><br /><br /><br /><br />
     </div>
     <div v-else-if="result">
       <h1>Quizz Action</h1>
@@ -62,7 +64,7 @@
         ><router-link style="color: #fef8f8" :to="{ name: 'quizzes' }">
           New game</router-link
         ></b-button
-      >
+      ><br /><br /><br /><br /><br /><br /><br />
     </div>
     <div v-else>
       <b-col>
