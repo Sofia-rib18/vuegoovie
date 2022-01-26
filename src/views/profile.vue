@@ -25,10 +25,17 @@
     <b-container fluid="sm">
       <b-row>
         <b-card-group deck v-for="(movie, index) in watchedFilms" :key="index">
-          <b-card tag="article" style="max-width: 20rem" class="mb-6">
+          <b-card
+            tag="article"
+            style="max-width: 14rem; background-color: transparent"
+            class="mb-6"
+          >
             <b-card-img :src="movie.poster"></b-card-img>
-            <b-card-title>{{ movie.title }}</b-card-title>
+            <b-card-title style="color: #fff8f7">{{
+              movie.title
+            }}</b-card-title>
             <b-button
+              id="button2"
               @click="
                 $router.push({ name: 'filme', params: { filmeId: movie.id } })
               "
@@ -43,10 +50,17 @@
     <b-container fluid="sm">
       <b-row>
         <b-card-group deck v-for="(serie, index) in watchedSeries" :key="index">
-          <b-card tag="article" style="max-width: 20rem" class="mb-6">
+          <b-card
+            tag="article"
+            style="max-width: 14rem; background-color: transparent"
+            class="mb-6"
+          >
             <b-card-img :src="serie.poster"></b-card-img>
-            <b-card-title>{{ serie.title }}</b-card-title>
+            <b-card-title style="color: #fff8f7">{{
+              serie.title
+            }}</b-card-title>
             <b-button
+              id="button2"
               @click="
                 $router.push({ name: 'serie', params: { serieId: serie.id } })
               "
@@ -61,9 +75,15 @@
     <b-container fluid="sm">
       <b-row>
         <b-card-group deck v-for="(favorite, index) in favorites" :key="index">
-          <b-card tag="article" style="max-width: 20rem" class="mb-6">
+          <b-card
+            tag="article"
+            style="max-width: 14rem; background-color: transparent"
+            class="mb-6"
+          >
             <b-card-img :src="favorite.poster"></b-card-img>
-            <b-card-title>{{ favorite.title }}</b-card-title>
+            <b-card-title style="color: #fff8f7">{{
+              favorite.title
+            }}</b-card-title>
             <b-button id="button2" @click="removeFavorite(favorite.title)"
               >Remove</b-button
             >
@@ -75,7 +95,10 @@
     <b-container class="bv-example-row" id="badgeContainer">
       <b-row>
         <b-col>
-          <b-avatar size="100px"></b-avatar>
+          <b-avatar
+            size="100px"
+            href="../assets/badgets/Car-flying.svg"
+          ></b-avatar>
           <p id="badgeName">Futuristic</p>
         </b-col>
         <b-col>

@@ -1612,6 +1612,11 @@ export default new Vuex.Store({
     SET_NEW_USER(state, payload) {
       state.users.push(payload)
     },
+    SET_EDIT(state, payload) {
+      state.loggedUser.photo = state.loggedUser.photo.filter((photo) => photo == payload.photo),
+        state.loggedUser.username = state.loggedUser.username.filter((user) => user == payload.username),
+        state.loggedUser.password = state.loggedUser.username.filter((pass) => pass == payload.password)
+    },
     SET_LOGOUT(state) {
       state.loggedUser = null
     },
