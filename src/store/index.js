@@ -1706,7 +1706,14 @@ export default new Vuex.Store({
           state.loggedUser.watchedFilms.push(film)
         }
       })
-    }
+    },
+    SET_WATCHED_SERIE(state, payload) {
+      state.series.map((serie) => {
+        if (serie.id === payload) {
+          state.loggedUser.watchedSeries.push(serie)
+        }
+      })
+    },
   },
   actions: {
     setLogin({ commit }) {

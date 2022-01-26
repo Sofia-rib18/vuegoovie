@@ -42,13 +42,13 @@
     <!-- Series -->
     <b-container fluid="sm">
       <b-row>
-        <b-card-group deck v-for="(movie, index) in getMovies" :key="index">
+        <b-card-group deck v-for="(serie, index) in watchedSeries" :key="index">
           <b-card tag="article" style="max-width: 20rem" class="mb-6">
-            <b-card-img :src="movie.poster"></b-card-img>
-            <b-card-title>{{ movie.title }}</b-card-title>
+            <b-card-img :src="serie.poster"></b-card-img>
+            <b-card-title>{{ serie.title }}</b-card-title>
             <b-button
               ><router-link
-                :to="{ name: 'filmes', params: { filmesId: movie.id } }"
+                :to="{ name: 'series', params: { seriesId: serie.id } }"
                 >View more</router-link
               ></b-button
             >
@@ -106,6 +106,9 @@ export default {
     },
     watchedFilms() {
       return this.getLoggedUser.watchedFilms;
+    },
+    watchedSeries() {
+      return this.getLoggedUser.watchedSeries;
     },
   },
   methods: {

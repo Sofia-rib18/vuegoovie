@@ -41,12 +41,17 @@
                 style="margin-left: 5px"
               ></b-icon>
             </b-button>
-            <b-icon
-              class="check"
-              icon="check-circle"
-              font-scale="2"
-              style="margin-left: 5px"
-            ></b-icon>
+            <b-button
+              @click="addWatched(serie.id)"
+              style="background-color: transparent; border-color: transparent"
+            >
+              <b-icon
+                class="check"
+                icon="check-circle"
+                font-scale="2"
+                style="margin-left: 5px"
+              ></b-icon>
+            </b-button>
           </b-col>
         </b-row>
         <b-row>
@@ -305,7 +310,11 @@ export default {
     ...mapGetters(["getShow", "getCommentsSeries", "getLoggedUser"]),
   },
   methods: {
-    ...mapMutations(["SET_COMMENTS_SERIES", "SET_FAVORITES_SERIE"]),
+    ...mapMutations([
+      "SET_COMMENTS_SERIES",
+      "SET_FAVORITES_SERIE",
+      "SET_WATCHED_SERIE",
+    ]),
     seri() {
       this.serie = this.getShow(this.$route.params.serieId);
       this.items = this.serie.whereWatch;
@@ -357,6 +366,9 @@ export default {
     },
     addFavorites(id) {
       this.SET_FAVORITES_SERIE(id);
+    },
+    addWatched(id) {
+      this.SET_WATCHED_SERIE(id);
     },
   },
 };
