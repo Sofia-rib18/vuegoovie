@@ -30,8 +30,14 @@
             </b-nav-item>
             <b-nav-item href="#">
               <router-link to="/profile" id="link">
-                <b-avatar width="35px" height="35px" v-if="loggedIn" :src="loggedIn.photo"></b-avatar>
-                <b-icon v-else
+                <b-avatar
+                  width="35px"
+                  height="35px"
+                  v-if="loggedIn"
+                  :src="loggedIn.photo"
+                ></b-avatar>
+                <b-icon
+                  v-else
                   icon="person-circle"
                   width="35px"
                   height="35px"
@@ -48,7 +54,7 @@
       </b-navbar>
     </div>
     <router-view />
-    <footer>
+    <footer id="footer">
       <b-container class="bv-example-row">
         <b-row>
           <b-col>
@@ -96,58 +102,59 @@
 </template>
 
 <script>
-
-import {mapGetters, mapActions } from 'vuex'
+import { mapGetters, mapActions } from "vuex";
 export default {
   computed: {
     ...mapGetters({
-      loggedIn: 'getLoggedUser'
+      loggedIn: "getLoggedUser",
     }),
   },
   methods: {
     ...mapActions({
-      setLogin: 'setLogin'
-    })
+      setLogin: "setLogin",
+    }),
   },
-  
-}
+};
 </script>
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 
-  #app {
-    font-family: "Quicksand", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-  }
+#app {
+  font-family: "Quicksand", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
-  #link {
-    padding: 30px;
-    color: #fef8f8;
-    text-decoration: none;
-  }
+#link {
+  padding: 30px;
+  color: #fef8f8;
+  text-decoration: none;
+}
 
-  #link:hover {
-    text-decoration: #de2221;
-    text-decoration-line: underline;
-  }
+#link:hover {
+  text-decoration: #de2221;
+  text-decoration-line: underline;
+}
 
-  #navbarBackground {
-    background: #070707;
-  }
+#navbarBackground {
+  background: #070707;
+}
 
-  #logout{
-    background-color: #070707;
-    border-color: #de2221;
-    color: #fef8f8;
-    width: 100px;
-    height: 40px;
-  }
+#logout {
+  background-color: #070707;
+  border-color: #de2221;
+  color: #fef8f8;
+  width: 100px;
+  height: 40px;
+}
 
-  #logout:hover {
-    background-color: #de2221;
-  }
+#logout:hover {
+  background-color: #de2221;
+}
+#footer {
+  bottom: 0;
+}
 </style>

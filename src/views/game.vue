@@ -86,7 +86,7 @@
           v-on:click="picker"
           style="margin-top: 30px; width: 150px-; color: #fff8f7"
           >Play</b-button
-        >
+        ><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
       </b-col>
     </div>
   </div>
