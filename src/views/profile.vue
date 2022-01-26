@@ -24,7 +24,7 @@
     <!-- Filmes -->
     <b-container fluid="sm">
       <b-row>
-        <b-card-group deck v-for="(movie, index) in getMovies" :key="index">
+        <b-card-group deck v-for="(movie, index) in watchedFilms" :key="index">
           <b-card tag="article" style="max-width: 20rem" class="mb-6">
             <b-card-img :src="movie.poster"></b-card-img>
             <b-card-title>{{ movie.title }}</b-card-title>
@@ -39,7 +39,7 @@
       </b-row>
     </b-container>
     <h2>Watched Series</h2>
-    <!-- Filmes -->
+    <!-- Series -->
     <b-container fluid="sm">
       <b-row>
         <b-card-group deck v-for="(movie, index) in getMovies" :key="index">
@@ -103,6 +103,9 @@ export default {
     ...mapGetters(["getMovies", "getLoggedUser"]),
     favorites() {
       return this.getLoggedUser.favorites;
+    },
+    watchedFilms() {
+      return this.getLoggedUser.watchedFilms;
     },
   },
   methods: {

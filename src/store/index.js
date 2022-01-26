@@ -17,7 +17,9 @@ export default new Vuex.Store({
         type: 'regular',
         location: 'pt',
         points: 70,
-        favorites: []
+        favorites: [],
+        watchedFilms: [],
+        watchedSeries: []
       },
       {
         username: 'User1',
@@ -26,7 +28,9 @@ export default new Vuex.Store({
         location: 'fr',
         points: 60,
         photo: 'https://p2.trrsf.com/image/fget/cf/1200/1200/filters:quality(85)/images.terra.com/2021/01/31/timotheechalamet.jpg',
-        favorites: []
+        favorites: [],
+        watchedFilms: [],
+        watchedSeries: []
       },
       {
         username: 'User2',
@@ -35,7 +39,9 @@ export default new Vuex.Store({
         location: 'it',
         points: 50,
         photo: 'https://studiosol-a.akamaihd.net/uploadfile/letras/fotos/8/9/f/6/89f6af6c672801fbcf9cfce8c69e217a.jpg',
-        favorites: []
+        favorites: [],
+        watchedFilms: [],
+        watchedSeries: []
       },
     ],
     loggedUser: localStorage.loggedUser ? JSON.parse(localStorage.loggedUser) : null,
@@ -1692,6 +1698,14 @@ export default new Vuex.Store({
     SET_REMOVE_FAVORITE(state, payload) {
       state.loggedUser.favorites = state.loggedUser.favorites.filter((favorite) =>
         favorite.title != payload)
+    },
+    //Vistos
+    SET_WATCHED_FILM(state, payload) {
+      state.films.map((film) => {
+        if (film.id === payload) {
+          state.loggedUser.watchedFilms.push(film)
+        }
+      })
     }
   },
   actions: {
