@@ -29,10 +29,10 @@
             <b-card-img :src="movie.poster"></b-card-img>
             <b-card-title>{{ movie.title }}</b-card-title>
             <b-button
-              ><router-link
-                :to="{ name: 'filmes', params: { filmesId: movie.id } }"
-                >View more</router-link
-              ></b-button
+              @click="
+                $router.push({ name: 'filme', params: { filmeId: movie.id } })
+              "
+              >View more</b-button
             >
           </b-card>
         </b-card-group>
@@ -47,10 +47,10 @@
             <b-card-img :src="serie.poster"></b-card-img>
             <b-card-title>{{ serie.title }}</b-card-title>
             <b-button
-              ><router-link
-                :to="{ name: 'series', params: { seriesId: serie.id } }"
-                >View more</router-link
-              ></b-button
+              @click="
+                $router.push({ name: 'serie', params: { serieId: serie.id } })
+              "
+              >View more</b-button
             >
           </b-card>
         </b-card-group>
